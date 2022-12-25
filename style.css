@@ -82,7 +82,7 @@ hr{
     margin: auto;
     margin-bottom: 20px;
     height: 550px;
-    background: url('./img/showcase2.jpg' ) no-repeat center/cover ;
+    background: url('./IMG/showcase2.jpg' ) no-repeat center/cover ;
     padding: 50px;
     display: flex;
     flex-direction: column;
@@ -155,7 +155,7 @@ hr{
     width: 90%;
     margin: auto;
     height: 350px;
-    background: url('./img/tech-red.jpg') no-repeat center/cover;
+    background: url('./IMG/tech-red.jpg') no-repeat center/cover;
     margin-bottom: 40px;
 }
 
@@ -176,7 +176,7 @@ hr{
     width: 90%;
     margin: auto;
     height: 350px;
-    background:url('./img/image-five.jpg') no-repeat center/cover;
+    background:url('./IMG/image-five.jpg') no-repeat center/cover;
 }
 
 .cards-banner-two .content{

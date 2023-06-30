@@ -457,56 +457,6 @@
         <h3 class="copyright">Todos los derechos reservados 2023 &copy;</h3>
     </footer>
     <script src="js/app.js"></script>
-    <script>
-        const profileImage = document.getElementById('profileImage');
-        const profileImageButton = document.getElementById('profileImageButton');
-        const cameraModal = document.getElementById('cameraModal');
-        const cameraVideo = document.getElementById('cameraVideo');
-        const icono = document.querySelector('.profile-image i.fa-user');
-
-        function openCameraModal() {
-            cameraModal.style.display = 'block';
-            startCamera();
-        }
-
-        function startCamera() {
-            navigator.mediaDevices.getUserMedia({ video: true })
-                .then(function(stream) {
-                    cameraVideo.srcObject = stream;
-                })
-                .catch(function(error) {
-                    console.error('Error al acceder a la cámara: ', error);
-                });
-        }
-
-        function capturePhoto() {
-            const canvas = document.createElement('canvas');
-            const context = canvas.getContext('2d');
-            canvas.width = cameraVideo.videoWidth;
-            canvas.height = cameraVideo.videoHeight;
-            context.drawImage(cameraVideo, 0, 0, canvas.width, canvas.height);
-            const photoURL = canvas.toDataURL();
-            profileImage.style.display="block";
-            icono.style.display="none";
-            profileImage.src = photoURL;
-            closeCameraModal();
-        }
-
-        function closeCameraModal() {
-            cameraModal.style.display = 'none';
-            stopCamera();
-        }
-
-        function stopCamera() {
-            const stream = cameraVideo.srcObject;
-            if (stream) {
-                const tracks = stream.getTracks();
-                tracks.forEach(function(track) {
-                    track.stop();
-                });
-            }
-        }
-    </script>
 </body>
 
 </html>

@@ -9,20 +9,75 @@ const tableBody = document.querySelector("#artworkTable tbody");
 //boton del formulario de filtro
 const btnFiltro = document.querySelector(".filtros");
 
+//--------Foto perfil----------------//
+const profileImage = document.getElementById("profileImage");
+
+const profileImageButton = document.getElementById("profileImageButton");
+
+const cameraModal = document.getElementById("cameraModal");
+
+const cameraVideo = document.getElementById("cameraVideo");
+
+const icono = document.querySelector(".profile-image i.fa-user");
+
+function openCameraModal() {
+  cameraModal.style.display = "block";
+  startCamera();
+}
+
+function startCamera() {
+  navigator.mediaDevices
+    .getUserMedia({ video: true })
+    .then(function (stream) {
+      cameraVideo.srcObject = stream;
+    })
+    .catch(function (error) {
+      console.error("Error al acceder a la cámara: ", error);
+    });
+}
+
+function capturePhoto() {
+  const canvas = document.createElement("canvas");
+  const context = canvas.getContext("2d");
+  canvas.width = cameraVideo.videoWidth;
+  canvas.height = cameraVideo.videoHeight;
+  context.drawImage(cameraVideo, 0, 0, canvas.width, canvas.height);
+  const photoURL = canvas.toDataURL();
+  profileImage.style.display = "block";
+  icono.style.display = "none";
+  profileImage.src = photoURL;
+  closeCameraModal();
+}
+
+function closeCameraModal() {
+  cameraModal.style.display = "none";
+  stopCamera();
+}
+
+function stopCamera() {
+  const stream = cameraVideo.srcObject;
+  if (stream) {
+    const tracks = stream.getTracks();
+    tracks.forEach(function (track) {
+      track.stop();
+    });
+  }
+}
+
 //-------------formulario de registro-------------------
 const formRegister = document.querySelector("#registerForm");
-if(formRegister!==null){
+if (formRegister !== null) {
   formRegister.addEventListener("submit", function (event) {
     event.preventDefault(); // Evita el envío del formulario
-  
+
     var password = document.getElementById("password").value;
     var confirmPassword = document.getElementById("confirmPassword").value;
-  
+
     var messageElement = document.getElementById("message");
-  
+
     var regexUppercase = /[A-Z]/;
     var regexNumber = /[0-9]/;
-  
+
     if (password !== confirmPassword) {
       messageElement.textContent = "Las contraseñas no coinciden.";
       messageElement.style.color = "red";
@@ -49,9 +104,6 @@ if(formRegister!==null){
     }
   });
 }
-
-
-
 
 //funciones
 //al dar click abre el carrito de compra
@@ -129,6 +181,7 @@ function createTableRow(imgSrc, name, price, size, description) {
 //Controlando el login
 
 window.addEventListener("DOMContentLoaded", function () {
+  
   var loginButton = document.getElementById("loginButton");
   var loginPopup = document.querySelector(".popup");
   var closeButton = document.querySelector(".icon-close");

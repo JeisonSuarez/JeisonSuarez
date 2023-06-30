@@ -46,8 +46,8 @@
         </nav>
     </header>
 
-    <!-- Login -->
-    <div class="popup">
+       <!-- Login -->
+       <div class="popup">
         <div class="wrapper">
             <span class="icon-close"><i class="fa-solid fa-xmark"></i></span>
             <div class="form-box login">
@@ -84,32 +84,49 @@
             <div class="form-box register">
                 <h2>Registro</h2>
 
-                <i class="fa-solid fa-user"></i>
+                <div class="profile-image">
+                    <i class="fa-solid fa-user"></i>
+                    <img id="profileImage" src="#" alt="Foto de perfil" style=
+                    "width: 150px; 
+                    height: 150px; 
+                    border-radius: 50%;
+                    display: none;">
+                    <button id="profileImageButton" class="profile-image-button" onclick="openCameraModal()"><i class="fa-sharp fa-solid fa-camera-retro"></i></button>
+                </div>
 
 
-                <form action="#">
+                <form action="#" id="registerForm" class="resgister-form">
 
                     <div class="input-box">
                         <span class="icon">
                             <i class="fa-solid fa-user"></i>
                         </span>
-                        <input type="text" required>
+                        <input type="text" class="userName" required>
                         <label>Nombre de usuario</label>
                     </div>
                     <div class="input-box">
                         <span class="icon">
                             <i class="fa-solid fa-envelope"></i>
                         </span>
-                        <input type="email" required>
+                        <input type="email" class="email" required>
                         <label>Correo</label>
                     </div>
 
                     <div class="input-box">
                         <span class="icon"><i class="fa-solid fa-lock"></i> </span>
-                        <input type="password" required>
+                        <input type="password" class="password" id="password" required>
                         <label>Contraseña</label>
                     </div>
-                    <div class="remember-forgot">
+
+                    <div class="input-box">
+                        <span class="icon"><i class="fa-solid fa-lock"></i> </span>
+                        <input type="password" class="confirmPassword" id="confirmPassword" required>
+                        <label>Confirmar Contraseña</label>
+                    </div>
+
+                    <div id="message" class="message"></div>
+
+                    <div class="remember-forgot" reqired>
                         <label> <input type="checkbox"> Aceptar términos y condiciones</label>
                     </div>
                     <button type="submit" class="btn">Registrarse</button>
@@ -119,9 +136,15 @@
                     </div>
                 </form>
             </div>
-
-
         </div>
+
+        <div id="cameraModal" class="modal">
+            <div class="modal-content">
+                <video id="cameraVideo" width="400" height="300" autoplay></video>
+                <button onclick="capturePhoto()">Capturar foto</button>
+            </div>
+        </div>
+        
     </div>
     <!-- Termina login -->
 

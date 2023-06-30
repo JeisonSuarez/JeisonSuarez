@@ -1,264 +1,512 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"/>
+    <title>ARTIST</title>
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/app.css">
 </head>
+
 <body>
-    
-    <div class="menu-btn">
-        <i class="fas fa-bars "></i>
-    </div>
-
     <header class="header">
-        <nav class="nav-main">
-            <img class="nav-brand" src="./IMG/brand.png" alt="LOGO">
-            <ul class="nav-menu">
-                <li><a href="">Web Development</a></li>
-                <li><a href="">Blockchain</a></li>
-                <li><a href="">Artificial Intelligence</a></li>
-                <li><a href="">Machine Learning</a></li>
-                <li><a href="">Quantum Computing</a></li>
-                <li><a href="">Startup</a></li>
-                <li><a href="">More</a></li>
+        <nav class="nav">
+            <div class="nav__logo">
+                <a href="index.html">
+                    <img src="./img/logo.svg" alt="img logo">
+                </a>
+            </div>
 
-            </ul>
-            <ul class="nav-menu-right">
-                <li>
-                    <a href="">
-                        <i class="fas fa-search"></i>
-                    </a>
-                </li>
-            </ul>
+            <input type="checkbox" name="" id="toggle">
+            <label for="toggle"><i class="fa-solid fa-bars"></i></label>
+
+            <div class="menu">
+                <ul>
+                    <li><a class="nav__obrart-obras" href="obras.html">Obras</a></li>
+                    <li><a class="nav__obrart-artistas" href="artistas.html">Artistas</a></li>
+                    <li>
+                        <div class="nav__search">
+                            <form class="nav__form" action="">
+                                <input class="nav__form-input" type="text" placeholder="Artistas, obras, categoría...">
+                                <button class="nav__form-button" type="submit"><i class="fa-sharp fa-solid fa-magnifying-glass"></i></button>
+                            </form>
+                        </div>
+                    </li>
+                    <li><a href="aplicarartis.html">Vender en ARTIST</a></li>
+                    <li> <a href="carrito.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
+                    <li><button id="loginButton" class="btn-login"><i class="fa-solid fa-user"></i></button> </li>
+                    
+                </ul>
+            </div>
         </nav>
-        <hr>
     </header>
-    <main>
-        <!-- SHOWCASE-->
-        <section class="showcase">
-            <h2>Big News Today</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, quas explicabo assumenda aspernatur ex cumque laboriosam. Natus recusandae explicabo velit?</p>
-            <a class="btn" href="#">Read more <i class="fa fa-angle-double-right"></i></a>
+
+    <!-- Login -->
+    <div class="popup">
+        <div class="wrapper">
+            <span class="icon-close"><i class="fa-solid fa-xmark"></i></span>
+            <div class="form-box login">
+                <h2>Inicio Sesión</h2>
+
+                <i class="fa-solid fa-user"></i>
+
+                <form action="#" id="loginForm" class="login-form">
+                    <div class="input-box">
+                        <span class="icon">
+                            <i class="fa-solid fa-envelope"></i>
+                        </span>
+                        <input type="email" required>
+                        <label>Correo</label>
+                    </div>
+
+                    <div class="input-box">
+                        <span class="icon"><i class="fa-solid fa-lock"></i> </span>
+                        <input type="password" required>
+                        <label>Contraseña</label>
+                    </div>
+                    <div class="remember-forgot">
+                        <label> <input type="checkbox"> Recordarme</label>
+                        <a href="#">olvidó su contraseña?</a>
+                    </div>
+                    <button type="submit" class="btn">Iniciar Sesión</button>
+
+                    <div class="login-register">
+                        <p>No tienes una cuenta ? <a href="#" class="register-link">Registrate!</a></p>
+                    </div>
+                </form>
+            </div>
+
+            <div class="form-box register">
+                <h2>Registro</h2>
+
+                <div class="profile-image">
+                    <i class="fa-solid fa-user"></i>
+                    <img id="profileImage" src="#" alt="Foto de perfil" style=
+                    "width: 150px; 
+                    height: 150px; 
+                    border-radius: 50%;
+                    display: none;">
+                    <button id="profileImageButton" class="profile-image-button" onclick="openCameraModal()"><i class="fa-sharp fa-solid fa-camera-retro"></i></button>
+                </div>
+
+
+                <form action="#" id="registerForm" class="resgister-form">
+
+                    <div class="input-box">
+                        <span class="icon">
+                            <i class="fa-solid fa-user"></i>
+                        </span>
+                        <input type="text" class="userName" required>
+                        <label>Nombre de usuario</label>
+                    </div>
+                    <div class="input-box">
+                        <span class="icon">
+                            <i class="fa-solid fa-envelope"></i>
+                        </span>
+                        <input type="email" class="email" required>
+                        <label>Correo</label>
+                    </div>
+
+                    <div class="input-box">
+                        <span class="icon"><i class="fa-solid fa-lock"></i> </span>
+                        <input type="password" class="password" id="password" required>
+                        <label>Contraseña</label>
+                    </div>
+
+                    <div class="input-box">
+                        <span class="icon"><i class="fa-solid fa-lock"></i> </span>
+                        <input type="password" class="confirmPassword" id="confirmPassword" required>
+                        <label>Confirmar Contraseña</label>
+                    </div>
+
+                    <div id="message" class="message"></div>
+
+                    <div class="remember-forgot" reqired>
+                        <label> <input type="checkbox"> Aceptar términos y condiciones</label>
+                    </div>
+                    <button type="submit" class="btn">Registrarse</button>
+
+                    <div class="login-register">
+                        <p>Ya tienes una cuenta? <a href="#" class="login-link">Iniciar Sesión</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div id="cameraModal" class="modal">
+            <div class="modal-content">
+                <video id="cameraVideo" width="400" height="300" autoplay></video>
+                <button onclick="capturePhoto()">Capturar foto</button>
+            </div>
+        </div>
+        
+    </div>
+    <!-- Termina login -->
+
+   
+
+    <section class="info__header">
+        <div class="info__heading">
+            <h1 class="info__heading-h1">Describe tu <br> personalidad</h1>
+            <h2 class="info__heading-text">con nuestras <br> obras de artes</h2>
+            <a href="obras.html">Deseo ver más sobre sus obras</a>
+        </div>
+    </section>
+
+    <main class="main">
+
+        <section class="planes__artistas">
+            <h1>Planes para Publicar Pinturas de Arte</h1>
+
+            <div class="container">
+                <div class="plan">
+                    <h2>Plan Básico</h2>
+                    <p>Publica hasta 5 pinturas de arte.</p>
+                    <p>Tiempo de publicación: 1 mes</p>
+                    <p>Precio: $19.99/mes</p>
+                    <button class="btn-comprar">Comprar</button>
+                </div>
+
+                <div class="plan">
+                    <h2>Plan Estándar</h2>
+                    <p>Publica hasta 10 pinturas de arte.</p>
+                    <p>Tiempo de publicación: 2 meses</p>
+                    <p>Precio: $29.99/mes</p>
+                    <button class="btn-comprar">Comprar</button>
+                </div>
+
+                <div class="plan">
+                    <h2>Plan Premium</h2>
+                    <p>Publica hasta 20 pinturas de arte.</p>
+                    <p>Tiempo de publicación: 3 meses</p>
+                    <p>Precio: $49.99/mes</p>
+                    <button class="btn-comprar">Comprar</button>
+                </div>
+
+                <div class="plan">
+                    <h2>Plan Empresarial</h2>
+                    <p>Publica hasta 50 pinturas de arte.</p>
+                    <p>Tiempo de publicación: 6 meses</p>
+                    <p>Precio: $99.99/mes</p>
+                    <button class="btn-comprar">Comprar</button>
+                </div>
+
+                <div class="plan">
+                    <h2>Plan Ilimitado</h2>
+                    <p>Publica un número ilimitado de pinturas de arte.</p>
+                    <p>Tiempo de publicación: 12 meses</p>
+                    <p>Precio: $149.99/mes</p>
+                    <button class="btn-comprar">Comprar</button>
+                </div>
+
+                <div class="plan">
+                    <h2>Plan Personalizado</h2>
+                    <p>Contáctanos para crear un plan personalizado según tus necesidades.</p>
+                    <button>Contactar</button>
+                </div>
+            </div>
         </section>
-        <!-- NEWS CARDS -->
-        <section class="news-card">
-            <div>
-                <img src="./IMG/news1.jpg" alt="News 1">
-                <h3>Lorem, ipsum dolor.</h3>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam quisquam recusandae iste minima, voluptates numquam dolorem beatae eius provident ab.</p>
-                <a href="#">Learn More<i class="fa fa-angle-double-right"></i></a>
+        <section class="obras">
+            <div class="obras-heading">
+                <h2 class="obras__heading">Las obras destacadas</h2>
+                <p class="obras__text">elegidas al gusto de las personas</p>
             </div>
 
-            <div>
-                <img src="./IMG/news2.jpg" alt="News 2">
-                <h3>Lorem, ipsum dolor.</h3>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam quisquam recusandae iste minima, voluptates numquam dolorem beatae eius provident ab.</p>
-                <a href="#">Learn More<i class="fa fa-angle-double-right"></i></a>
-            </div>
+            <section class="sections-slider">
+                <a class="obra" href="obra.html">
+                    <div class="sections__info">
+                        <div class="sections__info-img">
+                            <img src="img/obra-flor_ventana.png" alt="img">
+                        </div>
+                        <div class="sections__info-text">
+                            <h3 class="sections__info-text--h3">Flor en ventana | 2020</h3>
+                            <div class="section__info-text-description">
+                                <p class="sections__info-text-description--autor">Rahl Jain</p>
+                                <p class="sections__info-text-description--price">$5.200</p>
+                            </div>
+                            <div class="section__info-text-description">
+                                <p class="section__info-text--p">óleo en lienzo <span>81 x 65cm</span> </p>
+                                <a class="sections__info-text--car" href="#">Ver más <span><i class="fa-solid fa-angles-right"></i></span></a>
+                            </div>
 
-            <div>
-                <img src="./IMG/news3.jpg" alt="News 3">
-                <h3>Lorem, ipsum dolor.</h3>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam quisquam recusandae iste minima, voluptates numquam dolorem beatae eius provident ab.</p>
-                <a href="#">Learn More<i class="fa fa-angle-double-right"></i></a>
-            </div>
-
-            <div>
-                <img src="./IMG/news4.jpg" alt="News 4">
-                <h3>Lorem, ipsum dolor.</h3>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam quisquam recusandae iste minima, voluptates numquam dolorem beatae eius provident ab.</p>
-                <a href="#">Learn More<i class="fa fa-angle-double-right"></i></a>
-            </div>
-        </section>
-
-        <section class="cards-banner-one">
-            <div class="content">
-                <h2>Lorem, ipsum dolor.</h2>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorum illum deleniti sit facere quae voluptates eum id culpa esse aliquam?</p>
-                <a class="btn" href="#">Learn More <i class="fa fa-angle-double-right"></i></a>
-            </div>
-
-        </section>
-
-        <section class="news-card">
-            <div>
-                <img src="./IMG/news1.jpg" alt="News 1">
-                <h3>Lorem, ipsum dolor.</h3>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam quisquam recusandae iste minima, voluptates numquam dolorem beatae eius provident ab.</p>
-                <a href="#">Learn More<i class="fa fa-angle-double-right"></i></a>
-            </div>
-
-            <div>
-                <img src="./IMG/news2.jpg" alt="News 2">
-                <h3>Lorem, ipsum dolor.</h3>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam quisquam recusandae iste minima, voluptates numquam dolorem beatae eius provident ab.</p>
-                <a href="#">Learn More<i class="fa fa-angle-double-right"></i></a>
-            </div>
-
-            <div>
-                <img src="./IMG/news3.jpg" alt="News 3">
-                <h3>Lorem, ipsum dolor.</h3>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam quisquam recusandae iste minima, voluptates numquam dolorem beatae eius provident ab.</p>
-                <a href="#">Learn More<i class="fa fa-angle-double-right"></i></a>
-            </div>
-
-            <div>
-                <img src="./IMG/news4.jpg" alt="News 4">
-                <h3>Lorem, ipsum dolor.</h3>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam quisquam recusandae iste minima, voluptates numquam dolorem beatae eius provident ab.</p>
-                <a href="#">Learn More<i class="fa fa-angle-double-right"></i></a>
-            </div>
-        </section>
-
-        <section class="cards-banner-two">
-            <div class="content">
-                <h2>Lorem, ipsum dolor.</h2>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis incidunt ipsam nulla nemo. Enim molestiae blanditiis harum quas voluptatum tenetur, unde facere nihil ipsam id, inventore cumque! Consequuntur, natus porro.
-                </p>
-                <a href="#">Learn More <i class="fa fa-angle-double-right"></i></a>
-            </div>
-        </section>
-
-        <section class="social">
-            <p>Follow TecNews</p>
-            <div class="links">
-                <a href="#">
-                    <i class="fab fa-facebook-f"></i>
+                        </div>
+                    </div>
                 </a>
 
-                <a href="#">
-                    <i class="fab fa-twitter"></i>
+
+                <a class="obra" href="obra.html">
+                    <div class="sections__info">
+                        <div class="sections__info-img">
+                            <img src="img/obra-callle_mi_ciudad.png" alt="img">
+                        </div>
+                        <div class="sections__info-text">
+                            <h3 class="sections__info-text--h3">Calle de mi ciudad | 2020</h3>
+                            <div class="section__info-text-description">
+                                <p class="sections__info-text-description--autor">Jason Pereira</p>
+                                <p class="sections__info-text-description--price">$5.200</p>
+                            </div>
+                            <div class="section__info-text-description">
+                                <p class="section__info-text--p">óleo en lienzo <span>81 x 65cm</span> </p>
+                                <a class="sections__info-text--car" href="#">Ver más <span><i class="fa-solid fa-angles-right"></i></span></a>
+                            </div>
+
+                        </div>
+                    </div>
                 </a>
 
-                <a href="#">
-                    <i class="fab fa-linkedin"></i>
+                <a class="obra" href="obra.html">
+                    <div class="sections__info">
+                        <div class="sections__info-img">
+                            <img src="img/obra-tres_gatitos.png" alt="img">
+                        </div>
+                        <div class="sections__info-text">
+                            <h3 class="sections__info-text--h3">Tres gatitos| 2020</h3>
+                            <div class="section__info-text-description">
+                                <p class="sections__info-text-description--autor">Manuel López</p>
+                                <p class="sections__info-text-description--price">$5.200</p>
+                            </div>
+                            <div class="section__info-text-description">
+                                <p class="section__info-text--p">óleo en lienzo <span>81 x 65cm</span> </p>
+                                <a class="sections__info-text--car" href="#">Ver más <span><i class="fa-solid fa-angles-right"></i></span></a>
+                            </div>
+
+                        </div>
+                    </div>
                 </a>
+
+                <a class="obra" href="obra.html">
+                    <div class="sections__info">
+                        <div class="sections__info-img">
+                            <img src="img/obra-flor_ventana.png" alt="img">
+                        </div>
+                        <div class="sections__info-text">
+                            <h3 class="sections__info-text--h3">Flor en ventana | 2020</h3>
+                            <div class="section__info-text-description">
+                                <p class="sections__info-text-description--autor">Rahl Jain</p>
+                                <p class="sections__info-text-description--price">$5.200</p>
+                            </div>
+                            <div class="section__info-text-description">
+                                <p class="section__info-text--p">óleo en lienzo <span>81 x 65cm</span> </p>
+                                <a class="sections__info-text--car" href="#">Ver más <span><i class="fa-solid fa-angles-right"></i></span></a>
+                            </div>
+
+                        </div>
+                    </div>
+                </a>
+            </section>
+        </section>
+
+        <section class="style">
+            <div class="style-text">
+                <h2 class="style__heading">Descubra su estilo</h2>
+                <p class="style__text">y exprese su dedicación</p>
             </div>
+
+            <section class="section">
+                <div class="section-left">
+                    <img class="section__img" src="./img/elipse.png" alt="img circle">
+
+                    <div class="section__caract">
+                        <div class="section__caract-inf">
+                          <i class="fa-solid fa-check"></i>
+                            <p class="section__caract-inf--text">Naturaleza</p>
+                        </div>
+
+                        <div class="section__caract-inf">
+                          <i class="fa-solid fa-check"></i>
+                            <p class="section__caract-inf--text">Urbano</p>
+                        </div>
+
+                        <div class="section__caract-inf">
+                          <i class="fa-solid fa-check"></i>
+                            <p class="section__caract-inf--text">Animales</p>
+                        </div>
+
+                        <div class="section__caract-inf">
+                          <i class="fa-solid fa-check"></i>
+                            <p class="section__caract-inf--text">Retrato</p>
+                        </div>
+
+                        <div class="section__caract-inf">
+                          <i class="fa-solid fa-check"></i>
+                            <p class="section__caract-inf--text">Fantasía</p>
+                        </div>
+
+                        <div class="section__caract-inf">
+                          <i class="fa-solid fa-check"></i>
+                            <p class="section__caract-inf--text">Abstracción</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="section-right">
+                    <img src="img/sect-estilo.png" alt="img">
+                </div>
+            </section>
+        </section>
+
+        <section class="price">
+            <div class="price__text">
+                <h2 class="price__heading">Adquiere tus gustos</h2>
+                <p class="price__heading">a un precio accesible</p>
+            </div>
+
+            <section class="prices">
+                <div class="prices__img">
+                    <img src="img/sect-gustos.png" alt="img gustos">
+                </div>
+                <div class="price__prices">
+                    <div class="prices__prices-info">
+                        <p class="prices__prices-info--p">Desde 0 hasta <span>C$ 3000</span></p>
+                        <i class="fa-solid fa-circle-chevron-right"></i>
+                    </div>
+
+                    <div class="prices__prices-info">
+                        <p class="prices__prices-info--p">Desde 3000 hasta <span>C$ 6000</span></p>
+                        <i class="fa-solid fa-circle-chevron-right"></i>
+                    </div>
+
+                    <div class="prices__prices-info">
+                        <p class="prices__prices-info--p">Desde <span>C$ 9000</span></p>
+                        <i class="fa-solid fa-circle-chevron-right"></i>
+                    </div>
+                </div>
+            </section>
         </section>
     </main>
+
+    <section class="artists">
+        <h2 class="artists__destc">Descubre nuestros artistas destacados</h2>
+
+        <section class="info">
+            <div class="info__artist">
+                <p class="info__artist-name">Rahl Jain</p>
+                <div class="info__artist-text">
+                    <a href="obras.html"><p class="info__artist-p--nat">Naturaleza</p></a>
+                    <a href="obras.html"><p class="info__artist-p--ur">Urbano</p></a>
+                </div>
+
+            </div>
+
+            <div class="info__artist">
+                <p class="info__artist-name">Manuel Lopez</p>
+                <div class="info__artist-text">
+                    <a href="obras.html"><p class="info__artist-p--fan">Fantasía</p></a>
+                    <a href="obras.html"><p class="info__artist-p--ur">Urbano</p></a>
+                </div>
+            </div>
+
+            <div class="info__artist">
+                <p class="info__artist-name">Ariel Reyes</p>
+                <div class="info__artist-text">
+                    <a href="obras.html"><p class="info__artist-p--ret">Retrato</p></a>
+                    <a href="obras.html"><p class="info__artist-p--ur">Urbano</p></a>
+                </div>
+
+            </div>
+
+            <div class="info__artist">
+                <P class="info__artist-name">Jason Pereira</p>
+                <div class="info__artist-text">
+                    <a href="obras.html"><p class="info__artist-p--an">Animales</p></a>
+                    <a href="obras.html"><p class="info__artist-p--ur">Urbano</p></a>
+                </div>
+            </div>
+        </section>
+    </section>
+
     <footer>
-       <section class="footer-links">
-        <div class="footer-container">
-            <ul>
-                <li>
-                    <a href="">
-                        <h3>Title one</h3>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">Blockchain</a>
-                </li>
-                <li>
-                    <a href="#">Blockchain</a>
-                </li>
-                <li>
-                    <a href="#">Blockchain</a>
-                </li>
-                <li>
-                    <a href="#">Blockchain</a>
-                </li>
-                <li>
-                    <a href="#">Blockchain</a>
-                </li>
-                <li>
-                    <a href="#">Blockchain</a>
-                </li>
-            </ul>
+        <img src="./img/logo.png" alt="img logo">
 
-            <ul>
-                <li>
-                    <a href="">
-                        <h3>Title two</h3>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">Blockchain</a>
-                </li>
-                <li>
-                    <a href="#">Blockchain</a>
-                </li>
-                <li>
-                    <a href="#">Blockchain</a>
-                </li>
-                <li>
-                    <a href="#">Blockchain</a>
-                </li>
-                <li>
-                    <a href="#">Blockchain</a>
-                </li>
-                <li>
-                    <a href="#">Blockchain</a>
-                </li>
-            </ul>
+        <section class="footer">
+            <div class="footer__cont">
+                <h3>Contenido</h3>
+                <div class="footer__cont-text">
+                    <a class="footer__cont-a" href="#">Obras</a>
+                    <a class="footer__cont-a" href="#">Artistas</a>
+                    <a class="footer__cont-a" href="#">Vender en ARTIST</a>
+                </div>
+            </div>
 
-            <ul>
-                <li>
-                    <a href="">
-                        <h3>Title three</h3>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">Blockchain</a>
-                </li>
-                <li>
-                    <a href="#">Blockchain</a>
-                </li>
-                <li>
-                    <a href="#">Blockchain</a>
-                </li>
-                <li>
-                    <a href="#">Blockchain</a>
-                </li>
-                <li>
-                    <a href="#">Blockchain</a>
-                </li>
-                <li>
-                    <a href="#">Blockchain</a>
-                </li>
-            </ul>
+            <div class="footer__social">
+                <h3 class="footer__social-text">Redes Sociales</h3>
+                <div class="footer__social-redes">
+                    <a href="#" class="footer__social-logo"><i class="fa-brands fa-square-twitter"></i></a>
+                    <a href="#" class="footer__social-logo"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#" class="footer__social-logo"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="footer__social-logo"><i class="fa-solid fa-square-phone"></i></a>
+                </div>
 
-            <ul>
-                <li>
-                    <a href="">
-                        <h3>Title four</h3>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">Blockchain</a>
-                </li>
-                <li>
-                    <a href="#">Blockchain</a>
-                </li>
-                <li>
-                    <a href="#">Blockchain</a>
-                </li>
-                <li>
-                    <a href="#">Blockchain</a>
-                </li>
-                <li>
-                    <a href="#">Blockchain</a>
-                </li>
-                <li>
-                    <a href="#">Blockchain</a>
-                </li>
-            </ul>
+            </div>
 
-            
-        </div>
-       </section>
-       <section class="footer">
-        <h3>TecNews Copyright</h3>
-       </section>
+            <div class="footer__artist">
+                <h3>Acerca de ARTIST</h3>
+                <div class="footer__artist-text">
+                    <a class="footer__artist-a" href="#">¿Quiénes somos?</a>
+                    <a class="footer__artist-a" href="#">Políticas y condiciones</a>
+                    <a class="footer__artist-a" href="#">Misión</a>
+                    <a class="footer__artist-a" href="#">Visión</a>
+                </div>
+            </div>
+        </section>
+
+        <h3 class="copyright">Todos los derechos reservados 2023 &copy;</h3>
     </footer>
+    <script src="js/app.js"></script>
+    <script>
+        const profileImage = document.getElementById('profileImage');
+        const profileImageButton = document.getElementById('profileImageButton');
+        const cameraModal = document.getElementById('cameraModal');
+        const cameraVideo = document.getElementById('cameraVideo');
+        const icono = document.querySelector('.profile-image i.fa-user');
 
-    <script src="https://unpkg.com/scrollreveal"></script>
-    <script src="./main.js"></script>
+        function openCameraModal() {
+            cameraModal.style.display = 'block';
+            startCamera();
+        }
 
+        function startCamera() {
+            navigator.mediaDevices.getUserMedia({ video: true })
+                .then(function(stream) {
+                    cameraVideo.srcObject = stream;
+                })
+                .catch(function(error) {
+                    console.error('Error al acceder a la cámara: ', error);
+                });
+        }
+
+        function capturePhoto() {
+            const canvas = document.createElement('canvas');
+            const context = canvas.getContext('2d');
+            canvas.width = cameraVideo.videoWidth;
+            canvas.height = cameraVideo.videoHeight;
+            context.drawImage(cameraVideo, 0, 0, canvas.width, canvas.height);
+            const photoURL = canvas.toDataURL();
+            profileImage.style.display="block";
+            icono.style.display="none";
+            profileImage.src = photoURL;
+            closeCameraModal();
+        }
+
+        function closeCameraModal() {
+            cameraModal.style.display = 'none';
+            stopCamera();
+        }
+
+        function stopCamera() {
+            const stream = cameraVideo.srcObject;
+            if (stream) {
+                const tracks = stream.getTracks();
+                tracks.forEach(function(track) {
+                    track.stop();
+                });
+            }
+        }
+    </script>
 </body>
+
 </html>

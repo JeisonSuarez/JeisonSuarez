@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARTIST</title>
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/app.css">
+</head>
+
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav__logo">
+                <a href="index.html">
+                    <img src="./img/logo.svg" alt="img logo">
+                </a>
+            </div>
+
+            <input type="checkbox" name="" id="toggle">
+            <label for="toggle"><i class="fa-solid fa-bars"></i></label>
+
+            <div class="menu">
+                <ul>
+                    <li><a class="nav__obrart-obras" href="obras.html">Obras</a></li>
+                    <li><a class="nav__obrart-artistas" href="artistas.html">Artistas</a></li>
+                    <li>
+                        <div class="nav__search">
+                            <form class="nav__form" action="">
+                                <input class="nav__form-input" type="text" placeholder="Artistas, obras, categoría...">
+                                <button class="nav__form-button" type="submit"><i class="fa-sharp fa-solid fa-magnifying-glass"></i></button>
+                            </form>
+                        </div>
+                    </li>
+                    <li><a href="aplicarartis.html">Vender en ARTIST</a></li>
+                    <li> <a href="carrito.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
+                    <li><button id="loginButton" class="btn-login"><i class="fa-solid fa-user"></i></button> </li>
+                    
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Login -->
+    <section class="artists">
+        <h2 class="artists__destc">Descubre nuestros artistas destacados</h2>
+
+        <section class="info">
+            <div class="info__artist">
+                <a class="info__artist-name" href="artista.html">Rahl Jain</a>
+                <div class="info__artist-text">
+                    <a href="obras.html"><p class="info__artist-p--nat">Naturaleza</p></a>
+                    <a href="obras.html"><p class="info__artist-p--ur">Urbano</p></a>
+                </div>
+
+            </div>
+
+            <div class="info__artist">
+                <a class="info__artist-name" href="artista.html">Manuel Lopez</a>
+                <div class="info__artist-text">
+                    <a href="obras.html"><p class="info__artist-p--fan">Fantasía</p></a>
+                    <a href="obras.html"><p class="info__artist-p--ur">Urbano</p></a>
+                </div>
+            </div>
+
+            <div class="info__artist">
+                <a class="info__artist-name" href="artista.html">Ariel Reyes</a>
+                <div class="info__artist-text">
+                    <a href="obras.html"><p class="info__artist-p--ret">Retrato</p></a>
+                    <a href="obras.html"><p class="info__artist-p--ur">Urbano</p></a>
+                </div>
+
+            </div>
+
+            <div class="info__artist">
+                <a class="info__artist-name" href="artista.html">Jason Pereira</p>
+                <div class="info__artist-text">
+                    <a href="obras.html"><p class="info__artist-p--an">Animales</p></a>
+                    <a href="obras.html"><p class="info__artist-p--ur">Urbano</p></a>
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <main>
+        <section class="section-filter">
+            <div class="search">
+                <form class="search_form" action="">
+                    <input class="search__form-input" type="text" placeholder="Artistas, obras, categoría...">
+                    <button class="search__form-button" type="submit">
+                        <i class="fa-sharp fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </form>
+            </div>
+
+            <div class="select">
+                <label >Categorías de pinturas</label>
+                <select name="" id="">
+                   
+                    <option value="" disabled selected>Categorías de pinturas</option>
+                    <option value="animales">Animales</option>
+                    <option value="abstraccion">Abstracción</option>
+                    <option value="fantasia">Fantasía</option>
+                    <option value="naturaleza">Naturaleza</option>
+                    <option value="Retrato">Retrato</option>
+                    <option value="urbano">Urbano</option>                        
+                </select>
+            </div>
+        </section>
+
+        <section class="gallery">
+            <div class="info__artist">
+                <a class="info__artist-name" href="artista.html">Rahl Jain</a>
+                <div class="info__artist-text">
+                    <a href="obras.html"><p class="info__artist-p--nat">Naturaleza</p></a>
+                    <a href="obras.html"><p class="info__artist-p--ur">Urbano</p></a>
+                </div>
+
+            </div>
+
+            <div class="info__artist">
+                <a class="info__artist-name" href="artista.html">Manuel Lopez</a>
+                <div class="info__artist-text">
+                    <a href="obras.html"><p class="info__artist-p--fan">Fantasía</p></a>
+                    <a href="obras.html"><p class="info__artist-p--ur">Urbano</p></a>
+                </div>
+            </div>
+
+            <div class="info__artist">
+                <a class="info__artist-name" href="artista.html">Ariel Reyes</a>
+                <div class="info__artist-text">
+                    <a href="obras.html"><p class="info__artist-p--ret">Retrato</p></a>
+                    <a href="obras.html"><p class="info__artist-p--ur">Urbano</p></a>
+                </div>
+
+            </div>
+
+            <div class="info__artist">
+                <a class="info__artist-name" href="artista.html">Jason Pereira</p>
+                <div class="info__artist-text">
+                    <a href="obras.html"><p class="info__artist-p--an">Animales</p></a>
+                    <a href="obras.html"><p class="info__artist-p--ur">Urbano</p></a>
+                </div>
+            </div>
+
+            <div class="info__artist">
+                <a class="info__artist-name" href="artista.html">Rahl Jain</a>
+                <div class="info__artist-text">
+                    <a href="obras.html"><p class="info__artist-p--nat">Naturaleza</p></a>
+                    <a href="obras.html"><p class="info__artist-p--ur">Urbano</p></a>
+                </div>
+
+            </div>
+
+            <div class="info__artist">
+                <a class="info__artist-name" href="artista.html">Manuel Lopez</a>
+                <div class="info__artist-text">
+                    <a href="obras.html"><p class="info__artist-p--fan">Fantasía</p></a>
+                    <a href="obras.html"><p class="info__artist-p--ur">Urbano</p></a>
+                </div>
+            </div>
+
+            <div class="info__artist">
+                <a class="info__artist-name" href="artista.html">Ariel Reyes</a>
+                <div class="info__artist-text">
+                    <a href="obras.html"><p class="info__artist-p--ret">Retrato</p></a>
+                    <a href="obras.html"><p class="info__artist-p--ur">Urbano</p></a>
+                </div>
+
+            </div>
+
+            <div class="info__artist">
+                <a class="info__artist-name" href="artista.html">Jason Pereira</p>
+                <div class="info__artist-text">
+                    <a href="obras.html"><p class="info__artist-p--an">Animales</p></a>
+                    <a href="obras.html"><p class="info__artist-p--ur">Urbano</p></a>
+                </div>
+            </div>
+
+            <div class="info__artist">
+                <a class="info__artist-name" href="artista.html">Rahl Jain</a>
+                <div class="info__artist-text">
+                    <a href="obras.html"><p class="info__artist-p--nat">Naturaleza</p></a>
+                    <a href="obras.html"><p class="info__artist-p--ur">Urbano</p></a>
+                </div>
+
+            </div>
+
+            <div class="info__artist">
+                <a class="info__artist-name" href="artista.html">Manuel Lopez</a>
+                <div class="info__artist-text">
+                    <a href="obras.html"><p class="info__artist-p--fan">Fantasía</p></a>
+                    <a href="obras.html"><p class="info__artist-p--ur">Urbano</p></a>
+                </div>
+            </div>
+
+            <div class="info__artist">
+                <a class="info__artist-name" href="artista.html">Ariel Reyes</a>
+                <div class="info__artist-text">
+                    <a href="obras.html"><p class="info__artist-p--ret">Retrato</p></a>
+                    <a href="obras.html"><p class="info__artist-p--ur">Urbano</p></a>
+                </div>
+
+            </div>
+
+            <div class="info__artist">
+                <a class="info__artist-name" href="artista.html">Jason Pereira</p>
+                <div class="info__artist-text">
+                    <a href="obras.html"><p class="info__artist-p--an">Animales</p></a>
+                    <a href="obras.html"><p class="info__artist-p--ur">Urbano</p></a>
+                </div>
+            </div>
+            
+        </section>
+
+        <div class="obras-paginacion">
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+            <button>4</button>
+            <button><i class="fa-solid fa-angle-right"></i></button>
+        </div>
+    </main>
+
+    <footer>
+        <img src="./img/logo.png" alt="img logo">
+
+        <section class="footer">
+            <div class="footer__cont">
+                <h3>Contenido</h3>
+                <div class="footer__cont-text">
+                    <a class="footer__cont-a" href="#">Obras</a>
+                    <a class="footer__cont-a" href="#">Artistas</a>
+                    <a class="footer__cont-a" href="#">Vender en ARTIST</a>
+                </div>
+            </div>
+
+            <div class="footer__social">
+                <h3 class="footer__social-text">Redes Sociales</h3>
+                <div class="footer__social-redes">
+                    <a href="#" class="footer__social-logo"><i class="fa-brands fa-square-twitter"></i></a>
+                    <a href="#" class="footer__social-logo"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#" class="footer__social-logo"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="footer__social-logo"><i class="fa-solid fa-square-phone"></i></a>
+                </div>
+
+            </div>
+
+            <div class="footer__artist">
+                <h3>Acerca de ARTIST</h3>
+                <div class="footer__artist-text">
+                    <a class="footer__artist-a" href="#">¿Quiénes somos?</a>
+                    <a class="footer__artist-a" href="#">Políticas y condiciones</a>
+                    <a class="footer__artist-a" href="#">Misión</a>
+                    <a class="footer__artist-a" href="#">Visión</a>
+                </div>
+            </div>
+        </section>
+
+        <h3 class="copyright">Todos los derechos reservados 2023 &copy;</h3>
+    </footer>
+    <script src="js/app.js"></script>
+</body>
+
+</html>

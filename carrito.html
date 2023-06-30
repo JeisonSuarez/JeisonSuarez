@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARTIST</title>
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/app.css">
+</head>
+
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav__logo">
+                <a href="index.html">
+                    <img src="./img/logo.svg" alt="img logo">
+                </a>
+            </div>
+
+            <input type="checkbox" name="" id="toggle">
+            <label for="toggle"><i class="fa-solid fa-bars"></i></label>
+
+            <div class="menu">
+                <ul>
+                    <li><a class="nav__obrart-obras" href="obras.html">Obras</a></li>
+                    <li><a class="nav__obrart-artistas" href="artistas.html">Artistas</a></li>
+                    <li>
+                        <div class="nav__search">
+                            <form class="nav__form" action="">
+                                <input class="nav__form-input" type="text" placeholder="Artistas, obras, categoría...">
+                                <button class="nav__form-button" type="submit"><i
+                                        class="fa-sharp fa-solid fa-magnifying-glass"></i></button>
+                            </form>
+                        </div>
+                    </li>
+                    <li><a href="aplicarartis.html">Vender en ARTIST</a></li>
+                    <li> <a href="carrito.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
+                    <li><button id="loginButton" class="btn-login"><i class="fa-solid fa-user"></i></button> </li>
+
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Login -->
+    <div class="popup">
+        <div class="wrapper">
+            <span class="icon-close"><i class="fa-solid fa-xmark"></i></span>
+            <div class="form-box login">
+                <h2>Inicio Sesión</h2>
+
+                <i class="fa-solid fa-user"></i>
+
+                <form action="#" id="loginForm" class="login-form">
+                    <div class="input-box">
+                        <span class="icon">
+                            <i class="fa-solid fa-envelope"></i>
+                        </span>
+                        <input type="email" required>
+                        <label>Correo</label>
+                    </div>
+
+                    <div class="input-box">
+                        <span class="icon"><i class="fa-solid fa-lock"></i> </span>
+                        <input type="password" required>
+                        <label>Contraseña</label>
+                    </div>
+                    <div class="remember-forgot">
+                        <label> <input type="checkbox"> Recordarme</label>
+                        <a href="#">olvidó su contraseña?</a>
+                    </div>
+                    <button type="submit" class="btn">Iniciar Sesión</button>
+
+                    <div class="login-register">
+                        <p>No tienes una cuenta ? <a href="#" class="register-link">Registrate!</a></p>
+                    </div>
+                </form>
+            </div>
+
+            <div class="form-box register">
+                <h2>Registro</h2>
+
+                <i class="fa-solid fa-user"></i>
+
+
+                <form action="#">
+
+                    <div class="input-box">
+                        <span class="icon">
+                            <i class="fa-solid fa-user"></i>
+                        </span>
+                        <input type="text" required>
+                        <label>Nombre de usuario</label>
+                    </div>
+                    <div class="input-box">
+                        <span class="icon">
+                            <i class="fa-solid fa-envelope"></i>
+                        </span>
+                        <input type="email" required>
+                        <label>Correo</label>
+                    </div>
+
+                    <div class="input-box">
+                        <span class="icon"><i class="fa-solid fa-lock"></i> </span>
+                        <input type="password" required>
+                        <label>Contraseña</label>
+                    </div>
+                    <div class="remember-forgot">
+                        <label> <input type="checkbox"> Aceptar términos y condiciones</label>
+                    </div>
+                    <button type="submit" class="btn">Registrarse</button>
+
+                    <div class="login-register">
+                        <p>Ya tienes una cuenta? <a href="#" class="login-link">Iniciar Sesión</a></p>
+                    </div>
+                </form>
+            </div>
+
+
+        </div>
+    </div>
+    <!-- Termina login -->
+
+    <main>
+        <section class="info-plan">
+            <h1>Información del Plan</h1>
+            <p>Con este plan puedes publicar X obras de arte a un precion de <span>C$99.99</span></p>
+        </section>
+        <div class="form-carrito container-carrito">
+            <form id="artworkForm">
+                <label for="name">Nombre de la Obra:</label>
+                <input type="text" class="input-obras" id="name" name="name">
+
+                <label for="price">Precio:</label>
+                <input type="text" class="input-obras" id="price" name="price">
+
+                <label for="size">Tamaño:</label>
+                <input type="text" class="input-obras" id="size" name="size">
+
+                <label for="description">Descripción:</label>
+                <textarea id="description" name="description"></textarea>
+
+                <label for="image">Imagen:</label>
+                <input type="file" id="image" name="image">
+
+                <button type="submit">Agregar Obra</button>
+            </form>
+            <div class="table-container">
+                <table id="artworkTable">
+                    <thead>
+                        <tr>
+                            <th>Imagen</th>
+                            <th>Nombre</th>
+                            <th>Precio</th>
+                            <th>Tamaño</th>
+                            <th>Descripción</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+
+        </div>
+
+        <div class="payment-section">
+            <h2>Opciones de Pago</h2>
+            <ul class="payment-methods">
+                <li>
+                    <span><i class="material-icons">credit_card</i></span>
+                    <a href="#">Tarjeta de Crédito</a>
+                </li>
+                <li>
+                    <img src="./img/paypal.png" alt="PayPal">
+                    <a href="#">PayPal</a>
+                </li>
+                <li>
+                    <img src="./img/banco.png" alt="Transferencia Bancaria">
+                    <a href="#">Transferencia Bancaria</a>
+                </li>
+            </ul>
+        </div>
+    </main>
+
+
+    <footer>
+        <img src="./img/logo.png" alt="img logo">
+
+        <section class="footer">
+            <div class="footer__cont">
+                <h3>Contenido</h3>
+                <div class="footer__cont-text">
+                    <a class="footer__cont-a" href="#">Obras</a>
+                    <a class="footer__cont-a" href="#">Artistas</a>
+                    <a class="footer__cont-a" href="#">Vender en ARTIST</a>
+                </div>
+            </div>
+
+            <div class="footer__social">
+                <h3 class="footer__social-text">Redes Sociales</h3>
+                <div class="footer__social-redes">
+                    <a href="#" class="footer__social-logo"><i class="fa-brands fa-square-twitter"></i></a>
+                    <a href="#" class="footer__social-logo"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#" class="footer__social-logo"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="footer__social-logo"><i class="fa-solid fa-square-phone"></i></a>
+                </div>
+
+            </div>
+
+            <div class="footer__artist">
+                <h3>Acerca de ARTIST</h3>
+                <div class="footer__artist-text">
+                    <a class="footer__artist-a" href="#">¿Quiénes somos?</a>
+                    <a class="footer__artist-a" href="#">Políticas y condiciones</a>
+                    <a class="footer__artist-a" href="#">Misión</a>
+                    <a class="footer__artist-a" href="#">Visión</a>
+                </div>
+            </div>
+        </section>
+
+        <h3 class="copyright">Todos los derechos reservados 2023 &copy;</h3>
+    </footer>
+    <script src="js/app.js"></script>
+</body>
+
+</html>

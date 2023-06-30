@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARTIST</title>
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/app.css">
+</head>
+
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav__logo">
+                <a href="index.html">
+                    <img src="./img/logo.svg" alt="img logo">
+                </a>
+            </div>
+
+            <input type="checkbox" name="" id="toggle">
+            <label for="toggle"><i class="fa-solid fa-bars"></i></label>
+
+            <div class="menu">
+                <ul>
+                    <li><a class="nav__obrart-obras" href="obras.html">Obras</a></li>
+                    <li><a class="nav__obrart-artistas" href="artistas.html">Artistas</a></li>
+                    <li>
+                        <div class="nav__search">
+                            <form class="nav__form" action="">
+                                <input class="nav__form-input" type="text" placeholder="Artistas, obras, categoría...">
+                                <button class="nav__form-button" type="submit"><i class="fa-sharp fa-solid fa-magnifying-glass"></i></button>
+                            </form>
+                        </div>
+                    </li>
+                    <li><a href="aplicarartis.html">Vender en ARTIST</a></li>
+                    <li> <a href="carrito.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
+                    <li><button id="loginButton" class="btn-login"><i class="fa-solid fa-user"></i></button> </li>
+                    
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Login -->
+    <div class="popup">
+        <div class="wrapper">
+            <span class="icon-close"><i class="fa-solid fa-xmark"></i></span>
+            <div class="form-box login">
+                <h2>Inicio Sesión</h2>
+
+                <i class="fa-solid fa-user"></i>
+
+                <form action="#" id="loginForm" class="login-form">
+                    <div class="input-box">
+                        <span class="icon">
+                            <i class="fa-solid fa-envelope"></i>
+                        </span>
+                        <input type="email" required>
+                        <label>Correo</label>
+                    </div>
+
+                    <div class="input-box">
+                        <span class="icon"><i class="fa-solid fa-lock"></i> </span>
+                        <input type="password" required>
+                        <label>Contraseña</label>
+                    </div>
+                    <div class="remember-forgot">
+                        <label> <input type="checkbox"> Recordarme</label>
+                        <a href="#">olvidó su contraseña?</a>
+                    </div>
+                    <button type="submit" class="btn">Iniciar Sesión</button>
+
+                    <div class="login-register">
+                        <p>No tienes una cuenta ? <a href="#" class="register-link">Registrate!</a></p>
+                    </div>
+                </form>
+            </div>
+
+            <div class="form-box register">
+                <h2>Registro</h2>
+
+                <i class="fa-solid fa-user"></i>
+
+
+                <form action="#">
+
+                    <div class="input-box">
+                        <span class="icon">
+                            <i class="fa-solid fa-user"></i>
+                        </span>
+                        <input type="text" required>
+                        <label>Nombre de usuario</label>
+                    </div>
+                    <div class="input-box">
+                        <span class="icon">
+                            <i class="fa-solid fa-envelope"></i>
+                        </span>
+                        <input type="email" required>
+                        <label>Correo</label>
+                    </div>
+
+                    <div class="input-box">
+                        <span class="icon"><i class="fa-solid fa-lock"></i> </span>
+                        <input type="password" required>
+                        <label>Contraseña</label>
+                    </div>
+                    <div class="remember-forgot">
+                        <label> <input type="checkbox"> Aceptar términos y condiciones</label>
+                    </div>
+                    <button type="submit" class="btn">Registrarse</button>
+
+                    <div class="login-register">
+                        <p>Ya tienes una cuenta? <a href="#" class="login-link">Iniciar Sesión</a></p>
+                    </div>
+                </form>
+            </div>
+
+
+        </div>
+    </div>
+    <!-- Termina login -->
+    <main>
+        <section class="section__obra-info">
+            <div class="sections__info-obra">
+                <div class="sections__info-img-obra">
+                    <img src="img/obra-flor_ventana.png" alt="img" />
+                </div>
+                <div class="sections__info-text-obra">
+                    <h3 class="sections__info-text--h3-obra">Flor en ventana | 2020</h3>
+                    <div class="section__info-text-description-obra">
+
+                        <p class="sections__info-text-description--autor-obra">Rahl Jain</p>
+                        <p class="section__info-text--p-obra">
+                            óleo en lienzo <span>81 x 65cm</span>
+                        </p>
+                    </div>
+
+                    <div class="text-obra">
+                        <p>
+                            Cras malesuada purus non est viverra volutpat. Phasellus
+                            tincidunt ac eros sed volutpat. Morbi sit amet nisl commodo,
+                            vestibulum augue ac, eleifend sapien. Donec finibus massa id
+                            sagittis euismod. Phasellus tincidunt auctor metus, quis
+                            interdum odio malesuada ut. Praesent at porta massa. Praesent
+                            aliquam venenatis mi, eget lacinia neque sodales a. Vestibulum
+                            sit amet lectus sit amet ipsum imperdiet fermentum sed nec
+                            nulla.
+                        </p>
+                    </div>
+                        
+                   
+                    <div class="section__info-text-description-obra">
+                        <p class="sections__info-text-description--price-obra">$5.200</p>
+                        
+                        <a class="sections__info-text--car" href="contactoartista.html">Contacta al Artista <span><i class="fa-solid fa-angles-right"></i></span></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section__autor">
+            <h3 class="section__autor-header">El Autor</h3>
+            <div class="autor">
+                <header class="autor__header">
+                    <div class="autor__img">
+                        <img src="img/rahul-jain.png" alt="autor">
+                    </div>
+
+                    <div class="autor__info">
+                        <p class="autor__name">Rahl Jain</p>
+                    </div>
+                </header>
+
+                <blockquote class="autor__texto">
+                    es un artista experimentado afincado en el Estados Unidos cuyas pinturas se han exhibido en
+                    Inglaterra, Estados Unidos y España. Inspirada por los principios del Zen, así como por la
+                    naturaleza y la meditación, describe sus obras como creadas al escuchar su voz interior y la verdad
+                </blockquote>
+            </div>
+        </section>
+
+        <div class="gallery__Obras">
+
+            <h1 class="gallery__Obras-heading">Todas las obras de 
+                arte por Rhal Jain</h1>
+                <div class="gallery__Obras">
+                    <section class="sections">
+    
+                        <a class="obra" href="obra.html">
+                            <div class="sections__info">
+                                <div class="sections__info-img">
+                                    <img src="img/obra-flor_ventana.png" alt="img">
+                                </div>
+                                <div class="sections__info-text">
+                                    <h3 class="sections__info-text--h3">Flor en ventana | 2020</h3>
+                                    <div class="section__info-text-description">
+                                        <p class="sections__info-text-description--autor">Rahl Jain</p>
+                                        <p class="sections__info-text-description--price">$5.200</p>
+                                    </div>
+                                    <div class="section__info-text-description">
+                                        <p class="section__info-text--p">óleo en lienzo <span>81 x 65cm</span> </p>
+                                        <a class="sections__info-text--car" href="obra.html">Ver más <span><i class="fa-solid fa-angles-right"></i></span></a>
+                                    </div>
+        
+                                </div>
+                            </div>
+                        </a>
+        
+        
+                        <a class="obra" href="obra.html">
+                            <div class="sections__info">
+                                <div class="sections__info-img">
+                                    <img src="img/obra-callle_mi_ciudad.png" alt="img">
+                                </div>
+                                <div class="sections__info-text">
+                                    <h3 class="sections__info-text--h3">Calle de mi ciudad | 2020</h3>
+                                    <div class="section__info-text-description">
+                                        <p class="sections__info-text-description--autor">Jason Pereira</p>
+                                        <p class="sections__info-text-description--price">$5.200</p>
+                                    </div>
+                                    <div class="section__info-text-description">
+                                        <p class="section__info-text--p">óleo en lienzo <span>81 x 65cm</span> </p>
+                                        <a class="sections__info-text--car" href="obra.html">Ver más <span><i class="fa-solid fa-angles-right"></i></span></a>
+                                    </div>
+        
+                                </div>
+                            </div>
+                        </a>
+        
+                        <a class="obra" href="obra.html">
+                            <div class="sections__info">
+                                <div class="sections__info-img">
+                                    <img src="img/obra-tres_gatitos.png" alt="img">
+                                </div>
+                                <div class="sections__info-text">
+                                    <h3 class="sections__info-text--h3">Tres gatitos| 2020</h3>
+                                    <div class="section__info-text-description">
+                                        <p class="sections__info-text-description--autor">Manuel López</p>
+                                        <p class="sections__info-text-description--price">$5.200</p>
+                                    </div>
+                                    <div class="section__info-text-description">
+                                        <p class="section__info-text--p">óleo en lienzo <span>81 x 65cm</span> </p>
+                                        <a class="sections__info-text--car" href="obra.html">Ver más <span><i class="fa-solid fa-angles-right"></i></span></a>
+                                    </div>
+        
+                                </div>
+                            </div>
+                        </a>
+                    
+                        <a class="obra" href="obra.html">
+                            <div class="sections__info">
+                                <div class="sections__info-img">
+                                    <img src="img/obra-flor_ventana.png" alt="img">
+                                </div>
+                                <div class="sections__info-text">
+                                    <h3 class="sections__info-text--h3">Flor en ventana | 2020</h3>
+                                    <div class="section__info-text-description">
+                                        <p class="sections__info-text-description--autor">Rahl Jain</p>
+                                        <p class="sections__info-text-description--price">$5.200</p>
+                                    </div>
+                                    <div class="section__info-text-description">
+                                        <p class="section__info-text--p">óleo en lienzo <span>81 x 65cm</span> </p>
+                                        <a class="sections__info-text--car" href="obra.html">Ver más <span><i class="fa-solid fa-angles-right"></i></span></a>
+                                    </div>
+        
+                                </div>
+                            </div>
+                        </a>
+        
+        
+                        <a class="obra" href="obra.html">
+                            <div class="sections__info">
+                                <div class="sections__info-img">
+                                    <img src="img/obra-callle_mi_ciudad.png" alt="img">
+                                </div>
+                                <div class="sections__info-text">
+                                    <h3 class="sections__info-text--h3">Calle de mi ciudad | 2020</h3>
+                                    <div class="section__info-text-description">
+                                        <p class="sections__info-text-description--autor">Jason Pereira</p>
+                                        <p class="sections__info-text-description--price">$5.200</p>
+                                    </div>
+                                    <div class="section__info-text-description">
+                                        <p class="section__info-text--p">óleo en lienzo <span>81 x 65cm</span> </p>
+                                        <a class="sections__info-text--car" href="obra.html">Ver más <span><i class="fa-solid fa-angles-right"></i></span></a>
+                                    </div>
+        
+                                </div>
+                            </div>
+                        </a>
+        
+                        <a class="obra" href="obra.html">
+                            <div class="sections__info">
+                                <div class="sections__info-img">
+                                    <img src="img/obra-tres_gatitos.png" alt="img">
+                                </div>
+                                <div class="sections__info-text">
+                                    <h3 class="sections__info-text--h3">Tres gatitos| 2020</h3>
+                                    <div class="section__info-text-description">
+                                        <p class="sections__info-text-description--autor">Manuel López</p>
+                                        <p class="sections__info-text-description--price">$5.200</p>
+                                    </div>
+                                    <div class="section__info-text-description">
+                                        <p class="section__info-text--p">óleo en lienzo <span>81 x 65cm</span> </p>
+                                        <a class="sections__info-text--car" href="obra.html">Ver más <span><i class="fa-solid fa-angles-right"></i></span></a>
+                                    </div>
+        
+                                </div>
+                            </div>
+                        </a>
+                       
+                      
+                        <a class="obra" href="obra.html">
+                            <div class="sections__info">
+                                <div class="sections__info-img">
+                                    <img src="img/obra-flor_ventana.png" alt="img">
+                                </div>
+                                <div class="sections__info-text">
+                                    <h3 class="sections__info-text--h3">Flor en ventana | 2020</h3>
+                                    <div class="section__info-text-description">
+                                        <p class="sections__info-text-description--autor">Rahl Jain</p>
+                                        <p class="sections__info-text-description--price">$5.200</p>
+                                    </div>
+                                    <div class="section__info-text-description">
+                                        <p class="section__info-text--p">óleo en lienzo <span>81 x 65cm</span> </p>
+                                        <a class="sections__info-text--car" href="obra.html">Ver más <span><i class="fa-solid fa-angles-right"></i></span></a>
+                                    </div>
+        
+                                </div>
+                            </div>
+                        </a>
+        
+        
+                        <a class="obra" href="obra.html">
+                            <div class="sections__info">
+                                <div class="sections__info-img">
+                                    <img src="img/obra-callle_mi_ciudad.png" alt="img">
+                                </div>
+                                <div class="sections__info-text">
+                                    <h3 class="sections__info-text--h3">Calle de mi ciudad | 2020</h3>
+                                    <div class="section__info-text-description">
+                                        <p class="sections__info-text-description--autor">Jason Pereira</p>
+                                        <p class="sections__info-text-description--price">$5.200</p>
+                                    </div>
+                                    <div class="section__info-text-description">
+                                        <p class="section__info-text--p">óleo en lienzo <span>81 x 65cm</span> </p>
+                                        <a class="sections__info-text--car" href="obra.html">Ver más <span><i class="fa-solid fa-angles-right"></i></span></a>
+                                    </div>
+        
+                                </div>
+                            </div>
+                        </a>
+        
+                        <a class="obra" href="obra.html">
+                            <div class="sections__info">
+                                <div class="sections__info-img">
+                                    <img src="img/obra-tres_gatitos.png" alt="img">
+                                </div>
+                                <div class="sections__info-text">
+                                    <h3 class="sections__info-text--h3">Tres gatitos| 2020</h3>
+                                    <div class="section__info-text-description">
+                                        <p class="sections__info-text-description--autor">Manuel López</p>
+                                        <p class="sections__info-text-description--price">$5.200</p>
+                                    </div>
+                                    <div class="section__info-text-description">
+                                        <p class="section__info-text--p">óleo en lienzo <span>81 x 65cm</span> </p>
+                                        <a class="sections__info-text--car" href="obra.html">Ver más <span><i class="fa-solid fa-angles-right"></i></span></a>
+                                    </div>
+        
+                                </div>
+                            </div>
+                        </a>
+                    </section>
+                </div>
+        
+                <div class="obras-paginacion">
+                    <button>1</button>
+                    <button>2</button>
+                    <button>3</button>
+                    <button>4</button>
+                    <button><i class="fa-solid fa-angle-right"></i></button>
+                </div>
+    </main>
+
+    <footer>
+        <img src="./img/logo.png" alt="img logo">
+
+        <section class="footer">
+            <div class="footer__cont">
+                <h3>Contenido</h3>
+                <div class="footer__cont-text">
+                    <a class="footer__cont-a" href="#">Obras</a>
+                    <a class="footer__cont-a" href="#">Artistas</a>
+                    <a class="footer__cont-a" href="#">Vender en ARTIST</a>
+                </div>
+            </div>
+
+            <div class="footer__social">
+                <h3 class="footer__social-text">Redes Sociales</h3>
+                <div class="footer__social-redes">
+                    <a href="#" class="footer__social-logo"><i class="fa-brands fa-square-twitter"></i></a>
+                    <a href="#" class="footer__social-logo"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#" class="footer__social-logo"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="footer__social-logo"><i class="fa-solid fa-square-phone"></i></a>
+                </div>
+
+            </div>
+
+            <div class="footer__artist">
+                <h3>Acerca de ARTIST</h3>
+                <div class="footer__artist-text">
+                    <a class="footer__artist-a" href="#">¿Quiénes somos?</a>
+                    <a class="footer__artist-a" href="#">Políticas y condiciones</a>
+                    <a class="footer__artist-a" href="#">Misión</a>
+                    <a class="footer__artist-a" href="#">Visión</a>
+                </div>
+            </div>
+        </section>
+
+        <h3 class="copyright">Todos los derechos reservados 2023 &copy;</h3>
+    </footer>
+    <script src="js/app.js"></script>
+</body>
+
+</html>

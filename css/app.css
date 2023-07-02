@@ -1623,7 +1623,7 @@ footer h3 {
   }
 }
 
-.map{
+#map{
   height: 40rem;
   width: 90%;
   margin: 0 auto;

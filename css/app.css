@@ -510,10 +510,9 @@ h2 ~ i.fa-user {
   left: 188px;
   border: none;
   background: transparent;
-
 }
 
-.profile-image-button i{
+.profile-image-button i {
   color: var(--azulOscuro);
 }
 
@@ -1623,3 +1622,451 @@ footer h3 {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+.map{
+  height: 40rem;
+  width: 90%;
+  margin: 0 auto;
+}
+
+/* Fin artista.html */
+
+/* Inicio carrito.html */
+.info-plan P {
+  margin: 0 2rem;
+  text-align: center;
+}
+h1 {
+  text-align: center;
+  padding: 20px 0;
+}
+
+.container-carrito {
+  max-width: 800px;
+  min-width: 320px;
+  margin: 2rem auto;
+  padding: 20px;
+}
+
+.form-carrito {
+  margin-bottom: 20px;
+}
+
+.form-carrito label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.form-carrito input[type="text"].input-obras,
+.form-carrito textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+.form-carrito button {
+  background-color: var(--principal);
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.table-container {
+  overflow: scroll;
+}
+
+#artworkTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+}
+
+#artworkTable th,
+#artworkTable td {
+  padding: 8px;
+  border: 1px solid #ccc;
+}
+
+#artworkTable th {
+  background-color: #f2f2f2;
+}
+
+#artworkTable tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+#artworkTable tbody tr:hover {
+  background-color: #e6e6e6;
+}
+
+/* Estilos adicionales para las imágenes */
+.image-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.image-container img {
+  max-width: 100px;
+  max-height: 100px;
+  margin: 5px;
+}
+
+.image-container .image-item {
+  position: relative;
+  width: 100px;
+  height: 100px;
+}
+
+.image-container .image-item img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.image-container .image-item .delete-button {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  border: none;
+  border-radius: 50%;
+  color: #ffffff;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.delete-button i {
+  color: #ff0000;
+  background-color: var(--blanco);
+  border-radius: 50%;
+}
+
+.payment-section {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.payment-section h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.payment-methods {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 380px) {
+  .payment-methods {
+    flex-direction: column;
+  }
+}
+
+.payment-methods li {
+  margin: 0 10px;
+  display: grid;
+}
+
+.payment-methods img {
+  width: 40px;
+  height: 40px;
+  vertical-align: middle;
+}
+
+.payment-methods a {
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: var(--principal);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+/* Estilos para los enlaces de métodos de pago al pasar el cursor por encima */
+.payment-methods a:hover {
+  background-color: var(--principal);
+}
+
+/* Estilos para los enlaces de métodos de pago al estar activos */
+.payment-methods a.active {
+  background-color: var(--principal);
+}
+
+/* Fin carrito.html */
+
+/* Inicio info.html */
+
+.info__header-acerca {
+  background: url("../img/info-header-acerca.png");
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: var(--blanco);
+}
+
+.separator {
+  background-color: var(--amarilo);
+  height: 10rem;
+}
+
+.acerca {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-top: 2rem;
+}
+
+.acerca-nosotros {
+  background-image: url("../img/quiensomos.png");
+}
+
+
+
+.acerca-nosotros-text {
+  text-align: justify;
+  padding: 4rem;
+  background: rgba(255, 255, 255, 0.5);
+  font-weight: bold;
+}
+
+.nosotros-heading{
+  margin-bottom: 2rem;
+}
+
+
+.acerca-nosotros-text hr{
+  display: none;
+}
+
+.acerca-nosotros-text h3{
+  text-align: center;
+}
+
+.nosotros-grid{
+  display: initial;
+}
+@media (min-width:768px){
+  
+
+  .acerca-nosotros,.acerca-nosotros-text{
+    background: none;
+  }
+
+  .nosotros-heading{
+    display: grid;
+    grid-template-columns: 25rem 1fr;
+    align-items: center;
+  }
+
+  .nosotros-heading hr:nth-child(3){
+    display: block;
+    height: .5rem;
+    background-color: #000;
+    border: none;
+    width: 100%;
+  }
+
+
+
+  .nosotros-grid{
+    display: grid;
+    grid-template-columns: 31rem 1fr;
+    gap:4rem ;
+  }
+
+  .nosotros-img{
+    background-image: url("../img/quiensomos.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  @media (min-width:1110px){ 
+    .nosotros-heading{
+      grid-template-columns: 10rem  25rem 1fr;
+    }
+  
+    .nosotros-heading hr{
+      display: block;
+      height: .5rem;
+      background-color: #000;
+      border: none;
+      width: 100%;
+    }
+
+    .nosotros-grid{
+      grid-template-columns: 1fr 41rem;
+      align-items: center;
+    }
+
+    .nosotros-img {
+      grid-column: 2;
+      grid-row: 1;
+      min-height: 30rem;
+    }
+  }
+
+
+}
+
+.acerca-mision{
+  background-image: url('../img/mision.png');
+}
+
+
+@media (min-width:768px){ 
+  .acerca-mision,.acerca-nosotros-text{
+    background: none;
+  }
+
+  .nosotros-heading-mision{
+    display: grid;
+    grid-template-columns:  1fr 20rem;
+    align-items: center;
+  }
+
+  .nosotros-heading-mision hr:nth-child(1){
+    display: block;
+    height: .5rem;
+    background-color: #000;
+    border: none;
+    width: 100%;
+  }
+
+  .nosotros-heading-mision hr:nth-child(3){
+    display: none;
+  }
+
+
+
+  .mision-grid{
+    display: grid;
+    grid-template-columns: 1fr 31rem ;
+    column-gap:4rem ;
+  }
+
+  .nosotros-img-mision{
+    background-image: url("../img/mision.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    grid-column:2 ;
+    grid-row: 1;
+  }
+
+  .nosotros-p-mision{
+    grid-column: 1;
+  }
+
+  @media (min-width:1110px){ 
+    .nosotros-heading-mision{
+      grid-template-columns: 1fr  25rem 1fr;
+    }
+  
+    .nosotros-heading-mision hr:nth-child(n){
+      display: block;
+      height: .5rem;
+      background-color: #000;
+      border: none;
+      width: 100%;
+    }
+
+    .mision-grid{
+      grid-template-columns: 41rem 1fr ;
+      align-items: center;
+    }
+
+    .nosotros-img-mision {
+      grid-column: 1;
+      min-height: 30rem;
+    }
+    .nosotros-p-mision{
+      grid-column: 2;
+    }
+  }
+}
+
+.acerca-vision{
+  background-image: url('../img/vision.png');
+}
+
+@media (min-width:768px){
+  
+
+  .acerca-vision,.acerca-nosotros-text{
+    background: none;
+  }
+
+  .vision-heading{
+    display: grid;
+    grid-template-columns: 25rem 1fr;
+    align-items: center;
+  }
+
+  .vision-heading hr:nth-child(3){
+    display: block;
+    height: .5rem;
+    background-color: #000;
+    border: none;
+    width: 100%;
+  }
+
+
+
+  .vision-grid{
+    display: grid;
+    grid-template-columns: 31rem 1fr;
+    gap:4rem ;
+  }
+
+  .nosotros-img-vision{
+    background-image: url("../img/vision.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  @media (min-width:1110px){ 
+    .nosotros-heading-vision{
+      grid-template-columns: 1fr  25rem 10rem;
+    }
+  
+    .nosotros-heading hr{
+      display: block;
+      height: .5rem;
+      background-color: #000;
+      border: none;
+      width: 100%;
+    }
+
+    .vision-grid{
+      grid-template-columns: 1fr 41rem;
+      align-items: center;
+    }
+
+    .nosotros-img-vision {
+      grid-column: 2;
+      grid-row: 1;
+      min-height: 30rem;
+    }
+  }
+}
+

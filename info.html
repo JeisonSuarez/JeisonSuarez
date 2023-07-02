@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ARTIST</title>
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/app.css" />
+</head>
+
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav__logo">
+                <a href="index.html">
+                    <img src="./img/logo.svg" alt="img logo" />
+                </a>
+            </div>
+
+            <input type="checkbox" name="" id="toggle" />
+            <label for="toggle"><i class="fa-solid fa-bars"></i></label>
+
+            <div class="menu">
+                <ul>
+                    <li><a class="nav__obrart-obras" href="obras.html">Obras</a></li>
+                    <li>
+                        <a class="nav__obrart-artistas" href="artistas.html">Artistas</a>
+                    </li>
+                    <li>
+                        <div class="nav__search">
+                            <form class="nav__form" action="">
+                                <input class="nav__form-input" type="text"
+                                    placeholder="Artistas, obras, categoría..." />
+                                <button class="nav__form-button" type="submit">
+                                    <i class="fa-sharp fa-solid fa-magnifying-glass"></i>
+                                </button>
+                            </form>
+                        </div>
+                    </li>
+                    <li><a href="aplicarartis.html">Vender en ARTIST</a></li>
+                    <li>
+                        <a href="carrito.html"><i class="fa-solid fa-cart-shopping"></i></a>
+                    </li>
+                    <li>
+                        <button id="loginButton" class="btn-login">
+                            <i class="fa-solid fa-user"></i>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Login -->
+    <div class="popup">
+        <div class="wrapper">
+            <span class="icon-close"><i class="fa-solid fa-xmark"></i></span>
+            <div class="form-box login">
+                <h2>Inicio Sesión</h2>
+
+                <i class="fa-solid fa-user"></i>
+
+                <form action="#" id="loginForm" class="login-form">
+                    <div class="input-box">
+                        <span class="icon">
+                            <i class="fa-solid fa-envelope"></i>
+                        </span>
+                        <input type="email" required />
+                        <label>Correo</label>
+                    </div>
+
+                    <div class="input-box">
+                        <span class="icon"><i class="fa-solid fa-lock"></i> </span>
+                        <input type="password" required />
+                        <label>Contraseña</label>
+                    </div>
+                    <div class="remember-forgot">
+                        <label> <input type="checkbox" /> Recordarme</label>
+                        <a href="#">olvidó su contraseña?</a>
+                    </div>
+                    <button type="submit" class="btn">Iniciar Sesión</button>
+
+                    <div class="login-register">
+                        <p>
+                            No tienes una cuenta ?
+                            <a href="#" class="register-link">Registrate!</a>
+                        </p>
+                    </div>
+                </form>
+            </div>
+
+            <div class="form-box register">
+                <h2>Registro</h2>
+
+                <div class="profile-image">
+                    <i class="fa-solid fa-user"></i>
+                    <img id="profileImage" src="#" alt="Foto de perfil" style="
+                width: 150px;
+                height: 150px;
+                border-radius: 50%;
+                display: none;
+              " />
+                    <button id="profileImageButton" class="profile-image-button" onclick="openCameraModal()">
+                        <i class="fa-sharp fa-solid fa-camera-retro"></i>
+                    </button>
+                </div>
+
+                <form action="#" id="registerForm" class="resgister-form">
+                    <div class="input-box">
+                        <span class="icon">
+                            <i class="fa-solid fa-user"></i>
+                        </span>
+                        <input type="text" class="userName" required />
+                        <label>Nombre de usuario</label>
+                    </div>
+                    <div class="input-box">
+                        <span class="icon">
+                            <i class="fa-solid fa-envelope"></i>
+                        </span>
+                        <input type="email" class="email" required />
+                        <label>Correo</label>
+                    </div>
+
+                    <div class="input-box">
+                        <span class="icon"><i class="fa-solid fa-lock"></i> </span>
+                        <input type="password" class="password" id="password" required />
+                        <label>Contraseña</label>
+                    </div>
+
+                    <div class="input-box">
+                        <span class="icon"><i class="fa-solid fa-lock"></i> </span>
+                        <input type="password" class="confirmPassword" id="confirmPassword" required />
+                        <label>Confirmar Contraseña</label>
+                    </div>
+
+                    <div id="message" class="message"></div>
+
+                    <div class="remember-forgot" reqired>
+                        <label>
+                            <input type="checkbox" /> Aceptar términos y condiciones</label>
+                    </div>
+                    <button type="submit" class="btn">Registrarse</button>
+
+                    <div class="login-register">
+                        <p>
+                            Ya tienes una cuenta?
+                            <a href="#" class="login-link">Iniciar Sesión</a>
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div id="cameraModal" class="modal">
+            <div class="modal-content">
+                <video id="cameraVideo" width="400" height="300" autoplay></video>
+                <button onclick="capturePhoto()">Capturar foto</button>
+            </div>
+        </div>
+    </div>
+    <!-- Termina login -->
+
+    <section class="info__header-acerca">
+        <div class="info__heading-acerca">
+            <h1 class="info__heading-h1">
+                Sobre <br />
+                ARTIST
+            </h1>
+        </div>
+    </section>
+    <div class="separator"></div>
+    <main class="main-acerca">
+        <section class=" acerca acerca-nosotros">
+            <div class="acerca-nosotros-text">
+                <div class="nosotros-heading">
+                    <hr />
+                    <h3>¿ QUIÉNES SOMOS ?</h3>
+                    <hr />
+                </div>
+                <div class="nosotros-grid">
+                    <div class="nosotros-img"></div>
+                    <div class="nosotros-p">
+                        <p>
+                            Somos una comunidad comprometidos con un trabajo de calidad.
+                            Creemos firmemente en la importancia de realizar un trabajo
+                            apasionado por el arte, colaborando con artistas que producen su
+                            obra. Ofrecemos al público nuevas opciones y proyectos
+                            culturales distintos que nos ayudan a ver el arte desde otro
+                            punto de vista. Y damos a nuestros clientes e inversionistas
+                            opciones de compra para fomentar el acercamiento con el arte.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="acerca acerca-mision">
+            <div class="acerca-nosotros-text">
+                <div class="nosotros-heading nosotros-heading-mision">
+                    <hr />
+                    <h3> MISIÓN </h3>
+                    <hr />
+                </div>
+                <div class="mision-grid">
+                    <div class="nosotros-img-mision"></div>
+                    <div class="nosotros-p-mision">
+                        <p>
+                            Somos un negocio que busca lograr la satisfacción total de las necesidades y expectativas de
+                            nuestros clientes, brindándoles productos de primera calidad, pero lo más importante
+                            prestándoles un excelente servicio. Buscando el posicionamiento de los artistas en el
+                            mercado actual, además ubicarnos como empresa líder en servicio y rentabilidad.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <section class=" acerca acerca-vision">
+            <div class="acerca-nosotros-text">
+                <div class="nosotros-heading nosotros-heading-vision">
+                    <hr />
+                    <h3> VISIÓN </h3>
+                    <hr />
+                </div>
+                <div class="vision-grid">
+                    <div class="nosotros-img-vision"></div>
+                    <div class="nosotros-p-vision">
+                        <p>
+                            Conseguir ser los más grandes líderes de la industria del arte, ofrecer los productos más
+                            innovadores y los servicios de la más alta calidad adelantándonos a las necesidades de todas
+                            las personas y contar con la más amplia habilidad para competir exitosamente en los mercados
+                            internacionales.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+    <footer>
+        <img src="./img/logo.png" alt="img logo">
+
+        <section class="footer">
+            <div class="footer__cont">
+                <h3>Contenido</h3>
+                <div class="footer__cont-text">
+                    <a class="footer__cont-a" href="obras.html">Obras</a>
+                    <a class="footer__cont-a" href="artistas.html">Artistas</a>
+                    <a class="footer__cont-a" href="#">Vender en ARTIST</a>
+                </div>
+            </div>
+
+            <div class="footer__social">
+                <h3 class="footer__social-text">Redes Sociales</h3>
+                <div class="footer__social-redes">
+                    <a href="#" class="footer__social-logo"><i class="fa-brands fa-square-twitter"></i></a>
+                    <a href="#" class="footer__social-logo"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#" class="footer__social-logo"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="footer__social-logo"><i class="fa-solid fa-square-phone"></i></a>
+                </div>
+
+            </div>
+
+            <div class="footer__artist">
+                <h3>Acerca de ARTIST</h3>
+                <div class="footer__artist-text">
+                    <a class="footer__artist-a" href="info.html">¿Quiénes somos?</a>
+                    <a class="footer__artist-a" href="#">Políticas y condiciones</a>
+                    <a class="footer__artist-a" href="info.html">Misión</a>
+                    <a class="footer__artist-a" href="info.html">Visión</a>
+                </div>
+            </div>
+        </section>
+
+        <h3 class="copyright">Todos los derechos reservados 2023 &copy;</h3>
+    </footer>
+    <script src="js/app.js"></script>
+</body>
+
+</html>

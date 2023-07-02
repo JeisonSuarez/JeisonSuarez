@@ -20,10 +20,7 @@ const cameraVideo = document.getElementById("cameraVideo");
 
 const icono = document.querySelector(".profile-image i.fa-user");
 
-function openCameraModal() {
-  cameraModal.style.display = "block";
-  startCamera();
-}
+
 
 function startCamera() {
   navigator.mediaDevices
@@ -64,21 +61,34 @@ function stopCamera() {
   }
 }
 
-//-------------formulario de registro-------------------
 const formRegister = document.querySelector("#registerForm");
 if (formRegister !== null) {
   formRegister.addEventListener("submit", function (event) {
     event.preventDefault(); // Evita el envío del formulario
 
-    var password = document.getElementById("password").value;
-    var confirmPassword = document.getElementById("confirmPassword").value;
+    let username = document.querySelector(".userName").value;
+    let email = document.querySelector(".email").value;
+    let password = document.getElementById("password").value;
+    let confirmPassword = document.getElementById("confirmPassword").value;
+    let termsCheckbox = document.querySelector('input[type="checkbox"]');
+    let messageElement = document.getElementById("message");
 
-    var messageElement = document.getElementById("message");
+    let regexUsername = /^[a-zA-Z0-9_]{3,20}$/; // Expresión regular para validar el nombre de usuario
+    let regexEmail = /^[a-zA-Z0-9_.+-]+@gmail.com$/; // Expresión regular para validar el correo electrónico de Gmail
+    let regexUppercase = /[A-Z]/;
+    let regexNumber = /[0-9]/;
 
-    var regexUppercase = /[A-Z]/;
-    var regexNumber = /[0-9]/;
-
-    if (password !== confirmPassword) {
+    if (!regexUsername.test(username)) {
+      messageElement.textContent =
+        "El nombre de usuario debe contener entre 3 y 20 caracteres alfanuméricos (letras, números y guiones bajos).";
+      messageElement.style.color = "red";
+      messageElement.style.marginBottom = "2rem";
+    } else if (!regexEmail.test(email)) {
+      messageElement.textContent =
+        "El correo electrónico debe ser una dirección de Gmail válida.";
+      messageElement.style.color = "red";
+      messageElement.style.marginBottom = "2rem";
+    } else if (password !== confirmPassword) {
       messageElement.textContent = "Las contraseñas no coinciden.";
       messageElement.style.color = "red";
       messageElement.style.marginBottom = "2rem";
@@ -97,11 +107,24 @@ if (formRegister !== null) {
         "La contraseña debe contener al menos un número.";
       messageElement.style.color = "red";
       messageElement.style.marginBottom = "2rem";
+    } else if (!termsCheckbox.checked) {
+      messageElement.textContent = "Debes aceptar los términos y condiciones.";
+      messageElement.style.color = "red";
+      messageElement.style.marginBottom = "2rem";
     } else {
-      messageElement.textContent = "Contraseña válida.";
+      messageElement.textContent = "Registro exitoso.";
       messageElement.style.color = "green";
       messageElement.style.marginBottom = "2rem";
+
+      // Limpiar los campos del formulario
+      formRegister.reset();
     }
+  });
+
+  // Event listener para ocultar el mensaje de error cuando un elemento tenga el foco
+  formRegister.addEventListener("focusin", function () {
+    let messageElement = document.getElementById("message");
+    messageElement.textContent = "";
   });
 }
 
@@ -115,7 +138,7 @@ if (btnComprar !== null) {
   });
 }
 
-//al dar click abre el formulario
+//al dar click abre el formulario de los filtros
 if (btnFiltro !== null) {
   btnFiltro.addEventListener("click", () => {
     var formulario = document.querySelector(".filtros-campos-container");
@@ -137,51 +160,99 @@ if (form !== null) {
     const price = document.getElementById("price").value;
     const size = document.getElementById("size").value;
     const description = document.getElementById("description").value;
-    const image = document.getElementById("image").files[0];
+    const images = document.getElementById("image").files;
 
-    const reader = new FileReader();
-    reader.onload = function (e) {
-      const imgSrc = e.target.result;
-      const newRow = createTableRow(imgSrc, name, price, size, description);
+    // Validar que solo se seleccionen archivos de imagen
+    const validImageTypes = ["image/jpeg", "image/png", "image/gif"];
+    const selectedImages = Array.from(images).filter((file) =>
+      validImageTypes.includes(file.type)
+    );
+    if (selectedImages.length !== images.length) {
+      alert("Por favor, selecciona solo archivos de imagen.");
+      return;
+    }
+
+    const imagePromises = Array.from(selectedImages).map((image) => {
+      return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+          resolve(e.target.result);
+        };
+        reader.onerror = function (e) {
+          reject(e);
+        };
+        reader.readAsDataURL(image);
+      });
+    });
+
+    Promise.all(imagePromises).then((results) => {
+      const newRow = createTableRow(results, name, price, size, description);
       tableBody.appendChild(newRow);
       form.reset();
-    };
-    reader.readAsDataURL(image);
+    });
   });
-}
 
-function createTableRow(imgSrc, name, price, size, description) {
-  const row = document.createElement("tr");
+  function createTableRow(imgSrcArray, name, price, size, description) {
+    const row = document.createElement("tr");
 
-  const imageCell = document.createElement("td");
-  const image = document.createElement("img");
-  image.src = imgSrc;
-  imageCell.appendChild(image);
-  row.appendChild(imageCell);
+    const imageCell = document.createElement("td");
+    const imageContainer = document.createElement("div");
+    imageContainer.classList.add("image-container");
+    imgSrcArray.forEach((imgSrc) => {
+      const imageItem = document.createElement("div");
+      imageItem.classList.add("image-item");
 
-  const nameCell = document.createElement("td");
-  nameCell.textContent = name;
-  row.appendChild(nameCell);
+      const image = document.createElement("img");
+      image.src = imgSrc;
+      imageItem.appendChild(image);
 
-  const priceCell = document.createElement("td");
-  priceCell.textContent = price;
-  row.appendChild(priceCell);
+      const deleteButton = document.createElement("button");
+      const deleteIcon = document.createElement("i");
+      deleteIcon.classList.add("fas", "fa-circle-xmark");
+      deleteButton.appendChild(deleteIcon);
+      deleteButton.classList.add("delete-button");
+      deleteButton.addEventListener("click", function () {
+        imageItem.remove();
+      });
+      imageItem.appendChild(deleteButton);
 
-  const sizeCell = document.createElement("td");
-  sizeCell.textContent = size;
-  row.appendChild(sizeCell);
+      imageContainer.appendChild(imageItem);
+    });
+    imageCell.appendChild(imageContainer);
+    row.appendChild(imageCell);
 
-  const descriptionCell = document.createElement("td");
-  descriptionCell.textContent = description;
-  row.appendChild(descriptionCell);
+    const nameCell = document.createElement("td");
+    nameCell.textContent = name;
+    row.appendChild(nameCell);
 
-  return row;
+    const priceCell = document.createElement("td");
+    priceCell.textContent = price;
+    row.appendChild(priceCell);
+
+    const sizeCell = document.createElement("td");
+    sizeCell.textContent = size;
+    row.appendChild(sizeCell);
+
+    const descriptionCell = document.createElement("td");
+    descriptionCell.textContent = description;
+    row.appendChild(descriptionCell);
+
+    const actionsCell = document.createElement("td");
+    const deleteButton = document.createElement("button");
+    deleteButton.textContent = "Eliminar";
+    deleteButton.addEventListener("click", function () {
+      row.remove();
+    });
+    actionsCell.appendChild(deleteButton);
+    row.appendChild(actionsCell);
+
+    return row;
+  }
 }
 
 //Controlando el login
 
 window.addEventListener("DOMContentLoaded", function () {
-  
   var loginButton = document.getElementById("loginButton");
   var loginPopup = document.querySelector(".popup");
   var closeButton = document.querySelector(".icon-close");

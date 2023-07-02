@@ -22,6 +22,11 @@ const icono = document.querySelector(".profile-image i.fa-user");
 
 
 
+function openCameraModal() {
+  cameraModal.style.display = "block";
+  startCamera();
+}
+
 function startCamera() {
   navigator.mediaDevices
     .getUserMedia({ video: true })
@@ -32,6 +37,7 @@ function startCamera() {
       console.error("Error al acceder a la cámara: ", error);
     });
 }
+
 
 function capturePhoto() {
   const canvas = document.createElement("canvas");
@@ -46,10 +52,13 @@ function capturePhoto() {
   closeCameraModal();
 }
 
+
+
 function closeCameraModal() {
   cameraModal.style.display = "none";
   stopCamera();
 }
+  
 
 function stopCamera() {
   const stream = cameraVideo.srcObject;

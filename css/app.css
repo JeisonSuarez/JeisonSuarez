@@ -1623,10 +1623,21 @@ footer h3 {
   }
 }
 
+.map-container{
+  width: 90%;
+  margin: 2rem auto;
+}
+
+.map-container h2{
+  font-size: 3rem;
+  text-align: center;
+  max-width: 52rem;
+  margin: 2rem auto;
+}
+
+
 #map{
   height: 40rem;
-  width: 90%;
-  margin: 0 auto;
 }
 
 /* Fin artista.html */

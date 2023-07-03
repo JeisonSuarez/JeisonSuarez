@@ -46,8 +46,8 @@
         </nav>
     </header>
 
-       <!-- Login -->
-       <div class="popup">
+        <!-- Login -->
+    <div class="popup">
         <div class="wrapper">
             <span class="icon-close"><i class="fa-solid fa-xmark"></i></span>
             <div class="form-box login">
@@ -60,13 +60,13 @@
                         <span class="icon">
                             <i class="fa-solid fa-envelope"></i>
                         </span>
-                        <input type="email" required>
+                        <input class="emailLogin" type="email" required>
                         <label>Correo</label>
                     </div>
 
                     <div class="input-box">
                         <span class="icon"><i class="fa-solid fa-lock"></i> </span>
-                        <input type="password" required>
+                        <input class="passwordLogin" type="password" required>
                         <label>Contraseña</label>
                     </div>
                     <div class="remember-forgot">
@@ -75,8 +75,10 @@
                     </div>
                     <button type="submit" class="btn">Iniciar Sesión</button>
 
+                    <p id="messageLogin"></p> <!-- Agregamos el elemento messageElement -->
+
                     <div class="login-register">
-                        <p>No tienes una cuenta ? <a href="#" class="register-link">Registrate!</a></p>
+                        <p>No tienes una cuenta ? <a href="#form-box register" class="register-link">Registrate!</a></p>
                     </div>
                 </form>
             </div>
@@ -126,13 +128,16 @@
 
                     <div id="message" class="message"></div>
 
-                    <div class="remember-forgot" reqired>
-                        <label> <input type="checkbox"> Aceptar términos y condiciones</label>
+                    <div class="remember-forgot" required>
+                        <label>
+                          <input class="terminos" id="checkboxTerminos" type="checkbox">
+                          Aceptar términos y condiciones
+                        </label>
                     </div>
                     <button type="submit" class="btn">Registrarse</button>
 
                     <div class="login-register">
-                        <p>Ya tienes una cuenta? <a href="#" class="login-link">Iniciar Sesión</a></p>
+                        <p>Ya tienes una cuenta? <a href="#form-box login" class="login-link">Iniciar Sesión</a></p>
                     </div>
                 </form>
             </div>

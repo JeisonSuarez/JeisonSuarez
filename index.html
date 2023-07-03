@@ -60,13 +60,13 @@
                         <span class="icon">
                             <i class="fa-solid fa-envelope"></i>
                         </span>
-                        <input type="email" required>
+                        <input class="emailLogin" type="email" required>
                         <label>Correo</label>
                     </div>
 
                     <div class="input-box">
                         <span class="icon"><i class="fa-solid fa-lock"></i> </span>
-                        <input type="password" required>
+                        <input class="passwordLogin" type="password" required>
                         <label>Contraseña</label>
                     </div>
                     <div class="remember-forgot">
@@ -75,8 +75,10 @@
                     </div>
                     <button type="submit" class="btn">Iniciar Sesión</button>
 
+                    <p id="messageLogin"></p> <!-- Agregamos el elemento messageElement -->
+
                     <div class="login-register">
-                        <p>No tienes una cuenta ? <a href="#" class="register-link">Registrate!</a></p>
+                        <p>No tienes una cuenta ? <a href="#form-box register" class="register-link">Registrate!</a></p>
                     </div>
                 </form>
             </div>
@@ -126,13 +128,16 @@
 
                     <div id="message" class="message"></div>
 
-                    <div class="remember-forgot" reqired>
-                        <label> <input type="checkbox"> Aceptar términos y condiciones</label>
+                    <div class="remember-forgot" required>
+                        <label>
+                          <input class="terminos" id="checkboxTerminos" type="checkbox">
+                          Aceptar términos y condiciones
+                        </label>
                     </div>
                     <button type="submit" class="btn">Registrarse</button>
 
                     <div class="login-register">
-                        <p>Ya tienes una cuenta? <a href="#" class="login-link">Iniciar Sesión</a></p>
+                        <p>Ya tienes una cuenta? <a href="#form-box login" class="login-link">Iniciar Sesión</a></p>
                     </div>
                 </form>
             </div>
@@ -169,40 +174,42 @@
                     <p>Publica hasta 5 pinturas de arte.</p>
                     <p>Tiempo de publicación: 1 mes</p>
                     <p>Precio: $19.99/mes</p>
-                    <button class="btn-comprar" data-id="1">Comprar</button>
+                    <button class="btn-comprar" data-id="1" data-titulo="Plan Básico" data-descripcion="Publica hasta 5 pinturas de arte." data-tiempo="1 mes" data-precio="19.99" data-cantidad="5">Comprar</button>
                 </div>
-
+                
                 <div class="plan">
                     <h2>Plan Estándar</h2>
                     <p>Publica hasta 10 pinturas de arte.</p>
                     <p>Tiempo de publicación: 2 meses</p>
                     <p>Precio: $29.99/mes</p>
-                    <button class="btn-comprar" data-id="2">Comprar</button>
+                    <button class="btn-comprar" data-id="2" data-titulo="Plan Estándar" data-descripcion="Publica hasta 10 pinturas de arte." data-tiempo="2 meses" data-precio="29.99" data-cantidad="10">Comprar</button>
                 </div>
-
+                
                 <div class="plan">
                     <h2>Plan Premium</h2>
                     <p>Publica hasta 20 pinturas de arte.</p>
                     <p>Tiempo de publicación: 3 meses</p>
                     <p>Precio: $49.99/mes</p>
-                    <button class="btn-comprar" data-id="3">Comprar</button>
+                    <button class="btn-comprar" data-id="3" data-titulo="Plan Premium" data-descripcion="Publica hasta 20 pinturas de arte." data-tiempo="3 meses" data-precio="49.99" data-cantidad="20">Comprar</button>
                 </div>
-
+                
                 <div class="plan">
                     <h2>Plan Empresarial</h2>
                     <p>Publica hasta 50 pinturas de arte.</p>
                     <p>Tiempo de publicación: 6 meses</p>
                     <p>Precio: $99.99/mes</p>
-                    <button class="btn-comprar" data-id="4">Comprar</button>
+                    <button class="btn-comprar" data-id="4" data-titulo="Plan Empresarial" data-descripcion="Publica hasta 50 pinturas de arte." data-tiempo="6 meses" data-precio="99.99" data-cantidad="50">Comprar</button>
                 </div>
-
+                
                 <div class="plan">
                     <h2>Plan Ilimitado</h2>
                     <p>Publica un número ilimitado de pinturas de arte.</p>
                     <p>Tiempo de publicación: 12 meses</p>
                     <p>Precio: $149.99/mes</p>
-                    <button class="btn-comprar" data-id="5">Comprar</button>
+                    <button class="btn-comprar" data-id="5" data-titulo="Plan Ilimitado" data-descripcion="Publica un número ilimitado de pinturas de arte." data-tiempo="12 meses" data-precio="149.99" data-cantidad="9999">Comprar</button>
                 </div>
+                
+                
             </div>
         </section>
         <section class="obras">
@@ -225,7 +232,7 @@
                             </div>
                             <div class="section__info-text-description">
                                 <p class="section__info-text--p">óleo en lienzo <span>81 x 65cm</span> </p>
-                                <a class="sections__info-text--car" href="#">Ver más <span><i class="fa-solid fa-angles-right"></i></span></a>
+                                <a class="sections__info-text--car" href="obra.html">Ver más <span><i class="fa-solid fa-angles-right"></i></span></a>
                             </div>
 
                         </div>
@@ -246,7 +253,7 @@
                             </div>
                             <div class="section__info-text-description">
                                 <p class="section__info-text--p">óleo en lienzo <span>81 x 65cm</span> </p>
-                                <a class="sections__info-text--car" href="#">Ver más <span><i class="fa-solid fa-angles-right"></i></span></a>
+                                <a class="sections__info-text--car" href="obra.html">Ver más <span><i class="fa-solid fa-angles-right"></i></span></a>
                             </div>
 
                         </div>
@@ -266,7 +273,7 @@
                             </div>
                             <div class="section__info-text-description">
                                 <p class="section__info-text--p">óleo en lienzo <span>81 x 65cm</span> </p>
-                                <a class="sections__info-text--car" href="#">Ver más <span><i class="fa-solid fa-angles-right"></i></span></a>
+                                <a class="sections__info-text--car" href="obra.html">Ver más <span><i class="fa-solid fa-angles-right"></i></span></a>
                             </div>
 
                         </div>
@@ -286,7 +293,7 @@
                             </div>
                             <div class="section__info-text-description">
                                 <p class="section__info-text--p">óleo en lienzo <span>81 x 65cm</span> </p>
-                                <a class="sections__info-text--car" href="#">Ver más <span><i class="fa-solid fa-angles-right"></i></span></a>
+                                <a class="sections__info-text--car" href="obra.html">Ver más <span><i class="fa-solid fa-angles-right"></i></span></a>
                             </div>
 
                         </div>
@@ -414,7 +421,9 @@
     </section>
 
     <footer>
-        <img src="./img/logo.png" alt="img logo">
+        <a href="index.html">
+            <img src="./img/logo.png" alt="img logo">
+        </a>
 
         <section class="footer">
             <div class="footer__cont">

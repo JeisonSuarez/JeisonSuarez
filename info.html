@@ -56,8 +56,8 @@
         </nav>
     </header>
 
-    <!-- Login -->
-    <div class="popup">
+     <!-- Login -->
+     <div class="popup">
         <div class="wrapper">
             <span class="icon-close"><i class="fa-solid fa-xmark"></i></span>
             <div class="form-box login">
@@ -70,26 +70,25 @@
                         <span class="icon">
                             <i class="fa-solid fa-envelope"></i>
                         </span>
-                        <input type="email" required />
+                        <input class="emailLogin" type="email" required>
                         <label>Correo</label>
                     </div>
 
                     <div class="input-box">
                         <span class="icon"><i class="fa-solid fa-lock"></i> </span>
-                        <input type="password" required />
+                        <input class="passwordLogin" type="password" required>
                         <label>Contraseña</label>
                     </div>
                     <div class="remember-forgot">
-                        <label> <input type="checkbox" /> Recordarme</label>
+                        <label> <input type="checkbox"> Recordarme</label>
                         <a href="#">olvidó su contraseña?</a>
                     </div>
                     <button type="submit" class="btn">Iniciar Sesión</button>
 
+                    <p id="messageLogin"></p> <!-- Agregamos el elemento messageElement -->
+
                     <div class="login-register">
-                        <p>
-                            No tienes una cuenta ?
-                            <a href="#" class="register-link">Registrate!</a>
-                        </p>
+                        <p>No tienes una cuenta ? <a href="#form-box register" class="register-link">Registrate!</a></p>
                     </div>
                 </form>
             </div>
@@ -99,58 +98,56 @@
 
                 <div class="profile-image">
                     <i class="fa-solid fa-user"></i>
-                    <img id="profileImage" src="#" alt="Foto de perfil" style="
-                width: 150px;
-                height: 150px;
-                border-radius: 50%;
-                display: none;
-              " />
-                    <button id="profileImageButton" class="profile-image-button" onclick="openCameraModal()">
-                        <i class="fa-sharp fa-solid fa-camera-retro"></i>
-                    </button>
+                    <img id="profileImage" src="#" alt="Foto de perfil" style=
+                    "width: 150px; 
+                    height: 150px; 
+                    border-radius: 50%;
+                    display: none;">
+                    <button id="profileImageButton" class="profile-image-button" onclick="openCameraModal()"><i class="fa-sharp fa-solid fa-camera-retro"></i></button>
                 </div>
 
+
                 <form action="#" id="registerForm" class="resgister-form">
+
                     <div class="input-box">
                         <span class="icon">
                             <i class="fa-solid fa-user"></i>
                         </span>
-                        <input type="text" class="userName" required />
+                        <input type="text" class="userName" required>
                         <label>Nombre de usuario</label>
                     </div>
                     <div class="input-box">
                         <span class="icon">
                             <i class="fa-solid fa-envelope"></i>
                         </span>
-                        <input type="email" class="email" required />
+                        <input type="email" class="email" required>
                         <label>Correo</label>
                     </div>
 
                     <div class="input-box">
                         <span class="icon"><i class="fa-solid fa-lock"></i> </span>
-                        <input type="password" class="password" id="password" required />
+                        <input type="password" class="password" id="password" required>
                         <label>Contraseña</label>
                     </div>
 
                     <div class="input-box">
                         <span class="icon"><i class="fa-solid fa-lock"></i> </span>
-                        <input type="password" class="confirmPassword" id="confirmPassword" required />
+                        <input type="password" class="confirmPassword" id="confirmPassword" required>
                         <label>Confirmar Contraseña</label>
                     </div>
 
                     <div id="message" class="message"></div>
 
-                    <div class="remember-forgot" reqired>
+                    <div class="remember-forgot" required>
                         <label>
-                            <input type="checkbox" /> Aceptar términos y condiciones</label>
+                          <input class="terminos" id="checkboxTerminos" type="checkbox">
+                          Aceptar términos y condiciones
+                        </label>
                     </div>
                     <button type="submit" class="btn">Registrarse</button>
 
                     <div class="login-register">
-                        <p>
-                            Ya tienes una cuenta?
-                            <a href="#" class="login-link">Iniciar Sesión</a>
-                        </p>
+                        <p>Ya tienes una cuenta? <a href="#form-box login" class="login-link">Iniciar Sesión</a></p>
                     </div>
                 </form>
             </div>
@@ -162,6 +159,7 @@
                 <button onclick="capturePhoto()">Capturar foto</button>
             </div>
         </div>
+        
     </div>
     <!-- Termina login -->
 

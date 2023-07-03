@@ -157,6 +157,168 @@ function resetFields() {
   icono.style.display = "block";
 }
 
+//validacion aaplica como artista
+const formartis = document.querySelector("#aplicartis-form");
+
+if (formartis !== null) {
+  const nombreInput = document.getElementById("nombre");
+  const apellidosInput = document.getElementById("apellidos");
+  const paisInput = document.getElementById("pais");
+  const correoInput = document.getElementById("correo");
+  const contrasenaInput = document.getElementById("contrasena");
+  const repetirContrasenaInput = document.getElementById("repetir-contrasena");
+  const aceptarTerminosInput = document.getElementById("aceptar-terminos");
+  const mensajeError = document.getElementById("mensaje-error");
+
+  formartis.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    const regexUsername = /^[a-zA-Z0-9_]{3,20}$/;
+    const regexEmail = /^[a-zA-Z0-9_.+-]+@gmail.com$/;
+    const regexUppercase = /[A-Z]/;
+    const regexNumber = /[0-9]/;
+
+    const nombre = nombreInput.value.trim();
+    const apellidos = apellidosInput.value.trim();
+    const pais = paisInput.value;
+    const correo = correoInput.value.trim();
+    const contrasena = contrasenaInput.value;
+    const repetirContrasena = repetirContrasenaInput.value;
+    const aceptarTerminos = aceptarTerminosInput.checked;
+
+    mensajeError.textContent = "";
+
+    if (!regexUsername.test(nombre)) {
+      mensajeError.textContent =
+        "El nombre de usuario debe contener entre 3 y 20 caracteres alfanuméricos (letras, números y guiones bajos).";
+      mensajeError.style.color = "red";
+      mensajeError.style.marginBottom = "2rem";
+      mensajeError.style.fontSize = "14px";
+      mensajeError.style.textAlign = "center";
+      return;
+    }
+
+    if (apellidos === "") {
+      mensajeError.textContent = "Debes ingresar tus apellidos.";
+      mensajeError.style.color = "red";
+      mensajeError.style.marginBottom = "2rem";
+      mensajeError.style.fontSize = "14px";
+      mensajeError.style.textAlign = "center";
+      return;
+    }
+
+    if (!regexEmail.test(correo)) {
+      mensajeError.textContent =
+        "El correo electrónico debe ser una dirección de Gmail válida.";
+        mensajeError.style.color = "red";
+        mensajeError.style.marginBottom = "2rem";
+        mensajeError.style.fontSize = "14px";
+        mensajeError.style.textAlign = "center";
+      return;
+    }
+
+    if (contrasena !== repetirContrasena) {
+      mensajeError.textContent = "Las contraseñas no coinciden.";
+      mensajeError.style.color = "red";
+      mensajeError.style.marginBottom = "2rem";
+      mensajeError.style.fontSize = "14px";
+      mensajeError.style.textAlign = "center";
+      return;
+    }
+
+    if (contrasena.length < 8) {
+      mensajeError.textContent =
+        "La contraseña debe tener al menos 8 caracteres.";
+        mensajeError.style.color = "red";
+        mensajeError.style.marginBottom = "2rem";
+        mensajeError.style.fontSize = "14px";
+        mensajeError.style.textAlign = "center";
+      return;
+    }
+
+    if (!regexUppercase.test(contrasena)) {
+      mensajeError.textContent =
+        "La contraseña debe contener al menos una mayúscula.";
+        mensajeError.style.color = "red";
+        mensajeError.style.marginBottom = "2rem";
+        mensajeError.style.fontSize = "14px";
+        mensajeError.style.textAlign = "center";
+      return;
+    }
+
+    if (!regexNumber.test(contrasena)) {
+      mensajeError.textContent =
+        "La contraseña debe contener al menos un número.";
+        mensajeError.style.color = "red";
+        mensajeError.style.marginBottom = "2rem";
+        mensajeError.style.fontSize = "14px";
+        mensajeError.style.textAlign = "center";
+      return;
+    }
+
+    if (pais === "") {
+      mensajeError.textContent = "Debes seleccionar un país.";
+      mensajeError.style.color = "red";
+      mensajeError.style.marginBottom = "2rem";
+      mensajeError.style.fontSize = "14px";
+      mensajeError.style.textAlign = "center";
+      return;
+    }
+
+    if (!aceptarTerminos) {
+      mensajeError.textContent = "Debes aceptar los términos y condiciones.";
+      mensajeError.style.color = "red";
+      mensajeError.style.marginBottom = "2rem";
+      mensajeError.style.fontSize = "14px";
+      mensajeError.style.textAlign = "center";
+      return;
+    }
+
+    // Enviar el formulario al servidor
+    // form.submit();
+
+    // Mostrar mensaje de éxito
+    mensajeError.textContent = "Registro exitoso.";
+    mensajeError.style.color = "green";
+    mensajeError.style.marginBottom = "2rem";
+    mensajeError.style.fontSize = "14px";
+    mensajeError.style.textAlign = "center";
+
+    // Restablecer los valores del formulario
+    formartis.reset();
+  });
+
+  // Limpiar el mensaje de error al enfocar en un campo
+  nombreInput.addEventListener("focus", function () {
+    mensajeError.textContent = "";
+  });
+
+  apellidosInput.addEventListener("focus", function () {
+    mensajeError.textContent = "";
+  });
+
+  paisInput.addEventListener("focus", function () {
+    mensajeError.textContent = "";
+  });
+
+  correoInput.addEventListener("focus", function () {
+    mensajeError.textContent = "";
+  });
+
+  contrasenaInput.addEventListener("focus", function () {
+    mensajeError.textContent = "";
+  });
+
+  repetirContrasenaInput.addEventListener("focus", function () {
+    mensajeError.textContent = "";
+  });
+
+  aceptarTerminosInput.addEventListener("focus", function () {
+    mensajeError.textContent = "";
+  });
+}
+
+//=-----------------
 //al dar click abre el carrito de compra
 if (btnComprar !== null) {
   // Obtener todos los botones de compra
@@ -191,15 +353,18 @@ window.addEventListener("load", function () {
   const params = new URLSearchParams(queryString);
   // Verificar si la página "carrito.html" está cargada
 
-  const contenedor = this.document.querySelector('.contenedor-carrito');
-  const contenedorPorDefecto = this.document.querySelector('.contenedor-defecto');
-
+  const contenedor = this.document.querySelector(".contenedor-carrito");
+  const contenedorPorDefecto = this.document.querySelector(
+    ".contenedor-defecto"
+  );
 
   if (currentPage === "carrito.html" && queryString) {
     // Obtener los valores de los parámetros
-    const contenedor = this.document.querySelector('.contenedor-carrito');
-    const contenedorPorDefecto = this.document.querySelector('.contenedor-defecto');
-    contenedor.style.display="block";
+    const contenedor = this.document.querySelector(".contenedor-carrito");
+    const contenedorPorDefecto = this.document.querySelector(
+      ".contenedor-defecto"
+    );
+    contenedor.style.display = "block";
     contenedorPorDefecto.style.display = "none";
 
     const id = params.get("id");
@@ -208,29 +373,30 @@ window.addEventListener("load", function () {
     const tiempo = params.get("tiempo");
     const precio = params.get("precio");
     const cantidad = params.get("cantidad");
-                  
+
     const tituloPlan = document.querySelector(".titulo-plan");
     const descripcionPlan = this.document.querySelector(".plan-description");
-    const precioPlan = this.document.querySelector(".plan-price")
+    const precioPlan = this.document.querySelector(".plan-price");
 
     tituloPlan.textContent = titulo;
-    precioPlan.textContent =" A un increible precio de $ " + precio;
+    precioPlan.textContent = " A un increible precio de $ " + precio;
     descripcionPlan.textContent = `Con nuestro plan de publicación de arte, 
     tendrás la oportunidad de mostrar hasta ${cantidad} pinturas de arte, 
     sin límites a tu imaginación y expresión artística. 
     Desde paisajes impresionantes hasta retratos fascinantes, 
     cada obra será apreciada y admirada por
      amantes del arte de todo el mundo por un tiempo de ${tiempo}.`;
-    
+
     addArtworkWithLimit(cantidad);
-  }else { 
-    const contenedor = this.document.querySelector('.contenedor-carrito');
-    const contenedorPorDefecto = this.document.querySelector('.contenedor-defecto');
-    if(contenedor !==null && contenedorPorDefecto !== null){
-      contenedor.style.display="none";
-    contenedorPorDefecto.style.display = "flex";
+  } else {
+    const contenedor = this.document.querySelector(".contenedor-carrito");
+    const contenedorPorDefecto = this.document.querySelector(
+      ".contenedor-defecto"
+    );
+    if (contenedor !== null && contenedorPorDefecto !== null) {
+      contenedor.style.display = "none";
+      contenedorPorDefecto.style.display = "flex";
     }
-    
   }
 });
 
@@ -467,3 +633,62 @@ registerLink.addEventListener("click", () => {
 loginLink.addEventListener("click", () => {
   wrapper.classList.remove("active");
 });
+
+// 
+
+const contactForm = document.getElementById('contactForm');
+
+if(contactForm !== null){
+  const paintingSelect = document.getElementById('painting');
+const messageInput = document.getElementById('message');
+const nameInput = document.getElementById('name');
+const emailInput = document.getElementById('email');
+
+contactForm.addEventListener('submit', function (event) {
+  event.preventDefault();
+
+  const paintingValue = paintingSelect.value;
+  const messageValue = messageInput.value.trim();
+  const nameValue = nameInput.value.trim();
+  const emailValue = emailInput.value.trim();
+
+  const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  if (paintingValue === '') {
+    alert('Debes seleccionar una pintura de interés.');
+    return;
+  }
+
+  if (messageValue === '') {
+    alert('Debes ingresar un mensaje.');
+    return;
+  }
+
+  if (nameValue === '') {
+    alert('Debes ingresar tu nombre.');
+    return;
+  }
+
+  if (emailValue === '') {
+    alert('Debes ingresar tu correo electrónico.');
+    return;
+  }
+
+  if (!regexEmail.test(emailValue)) {
+    alert('El correo electrónico ingresado no es válido.');
+    return;
+  }
+
+  // Enviar el formulario al servidor
+  // contactForm.submit();
+
+  // Mostrar mensaje de éxito
+  alert('Mensaje enviado correctamente.');
+
+  // Restablecer los valores del formulario
+  contactForm.reset();
+});
+}
+
+
+

@@ -1658,12 +1658,12 @@ footer h3 {
   margin: 2rem auto;
   text-align: center;
 }
-.info-plan h1,h2 {
+.info-plan h1,h2,p {
   text-align: center;
 }
 
 .info-plan p{
-  text-align:justify;
+  font-size: 20px;
 }
 
 .info-plan span {
@@ -2136,6 +2136,8 @@ footer h3 {
 
 
 
+
+
 .info-aplicar__heading{
 color: #fff;
 text-align: center;
@@ -2156,7 +2158,32 @@ margin: 3rem 0;
   OBJECT-POSITION: RIGHT;
 }
 
-.filtro__form-input-submit{
+.contenedor-aplicartis{
+  max-width: 67rem;
+    margin: 0 auto;
+    padding: 1rem;
+    font-weight: 600;
+
+}
+
+.contenedor-aplicartis.form__campo {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 2rem;
+  align-items: center;
+  margin: 2rem 0;
+}
+
+.contenedor-aplicartis .form__campo input,
+.contenedor-aplicartis .form__campo select { 
+  height: 3.2rem;
+}
+
+.contenedor-aplicartis .campo-terminos{
+  display: flex;
+}
+
+.contenedor-aplicartis .btn-submit {
 color: #ffffff;
   padding: 1rem;
   display: block;
@@ -2168,20 +2195,16 @@ color: #ffffff;
   border: none;
 }
 
-.sections__info-text-obra-car{
-background-color: #F69C6D;
-color: #fff;
-
-}
 
 /* contactoartista.html */
 /* Seccion contacto artista */
 .contact-section {
   max-width: 600px;
-  margin: 0 auto;
+  margin: 4rem auto;
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
+  background: var(--blanco);
 }
 
 .contact-section h2 {
@@ -2213,7 +2236,7 @@ color: #fff;
   height: 120px;
 }
 
-.form-group .btn-submit {
+.contact-section .btn-submit {
   display: block;
   width: 100%;
   padding: 10px;
@@ -2224,7 +2247,15 @@ color: #fff;
   cursor: pointer;
 }
 
+
 /* Contacto artista */
 .form-contacto{
   box-sizing: border-box;
+}
+
+.contact-section-background{
+  background-image: url('../img/sect-gustos.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }

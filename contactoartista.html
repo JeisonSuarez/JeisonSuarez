@@ -33,20 +33,21 @@
                         <div class="nav__search">
                             <form class="nav__form" action="">
                                 <input class="nav__form-input" type="text" placeholder="Artistas, obras, categoría...">
-                                <button class="nav__form-button" type="submit"><i class="fa-sharp fa-solid fa-magnifying-glass"></i></button>
+                                <button class="nav__form-button" type="submit"><i
+                                        class="fa-sharp fa-solid fa-magnifying-glass"></i></button>
                             </form>
                         </div>
                     </li>
                     <li><a href="aplicarartis.html">Vender en ARTIST</a></li>
                     <li> <a href="carrito.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
                     <li><button id="loginButton" class="btn-login"><i class="fa-solid fa-user"></i></button> </li>
-                    
+
                 </ul>
             </div>
         </nav>
     </header>
 
-        <!-- Login -->
+    <!-- Login -->
     <div class="popup">
         <div class="wrapper">
             <span class="icon-close"><i class="fa-solid fa-xmark"></i></span>
@@ -88,12 +89,12 @@
 
                 <div class="profile-image">
                     <i class="fa-solid fa-user"></i>
-                    <img id="profileImage" src="#" alt="Foto de perfil" style=
-                    "width: 150px; 
+                    <img id="profileImage" src="#" alt="Foto de perfil" style="width: 150px; 
                     height: 150px; 
                     border-radius: 50%;
                     display: none;">
-                    <button id="profileImageButton" class="profile-image-button" onclick="openCameraModal()"><i class="fa-sharp fa-solid fa-camera-retro"></i></button>
+                    <button id="profileImageButton" class="profile-image-button" onclick="openCameraModal()"><i
+                            class="fa-sharp fa-solid fa-camera-retro"></i></button>
                 </div>
 
 
@@ -130,8 +131,8 @@
 
                     <div class="remember-forgot" required>
                         <label>
-                          <input class="terminos" id="checkboxTerminos" type="checkbox">
-                          Aceptar términos y condiciones
+                            <input class="terminos" id="checkboxTerminos" type="checkbox">
+                            Aceptar términos y condiciones
                         </label>
                     </div>
                     <button type="submit" class="btn">Registrarse</button>
@@ -149,81 +150,86 @@
                 <button onclick="capturePhoto()">Capturar foto</button>
             </div>
         </div>
-        
+
     </div>
     <!-- Termina login -->
-
-    <section class="contacta-artista">
-        <div class="contact-section">
-            <h2>Contacto con el Artista</h2>
-            <form class="form-contacto">
-              <div class="form-group">
-                <label for="recipient">Para: Rhal Jain</label>
-              </div>
-              <div class="form-group">
-                <label for="painting">Pintura de interés:</label>
-                <select id="painting" name="painting">
-                  <option value="painting1">Pintura 1</option>
-                  <option value="painting2">Pintura 2</option>
-                  <option value="painting3">Pintura 3</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label for="message">Mensaje:</label>
-                <textarea id="message" name="message" required></textarea>
-              </div>
-              <div class="form-group">
-                <label for="name">Nombre:</label>
-                <input type="text" id="name" name="name" required>
-              </div>
-              <div class="form-group">
-                <label for="email">Correo Electrónico:</label>
-                <input type="email" id="email" name="email" required>
-              </div>
-              <button type="submit" class="btn-submit">Enviar Mensaje</button>
-            </form>
-          </div>
-    </section>
-   </main>
-
-   <footer>
-    <img src="./img/logo.png" alt="img logo">
-
-    <section class="footer">
-        <div class="footer__cont">
-            <h3>Contenido</h3>
-            <div class="footer__cont-text">
-                <a class="footer__cont-a" href="obras.html">Obras</a>
-                <a class="footer__cont-a" href="artistas.html">Artistas</a>
-                <a class="footer__cont-a" href="#">Vender en ARTIST</a>
-            </div>
+    <main>
+        <div class="contact-section-background">
+            <section class="contacta-artista">
+                <div class="contact-section">
+                    <h2>Contacto con el Artista</h2>
+                    <form class="form-contacto">
+                        <div class="form-group">
+                            <label for="recipient">Para: Rhal Jain</label>
+                        </div>
+                        <div class="form-group">
+                            <label for="painting">Pintura de interés:</label>
+                            <select id="painting" name="painting">
+                                <option value="painting1">Pintura 1</option>
+                                <option value="painting2">Pintura 2</option>
+                                <option value="painting3">Pintura 3</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Mensaje:</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="name">Nombre:</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Correo Electrónico:</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <button type="submit" class="btn-submit">Enviar Mensaje</button>
+                    </form>
+                </div>
+            </section>
         </div>
 
-        <div class="footer__social">
-            <h3 class="footer__social-text">Redes Sociales</h3>
-            <div class="footer__social-redes">
-                <a href="#" class="footer__social-logo"><i class="fa-brands fa-square-twitter"></i></a>
-                <a href="#" class="footer__social-logo"><i class="fa-brands fa-facebook"></i></a>
-                <a href="#" class="footer__social-logo"><i class="fa-brands fa-instagram"></i></a>
-                <a href="#" class="footer__social-logo"><i class="fa-solid fa-square-phone"></i></a>
+    </main>
+
+
+
+    <footer>
+        <img src="./img/logo.png" alt="img logo">
+
+        <section class="footer">
+            <div class="footer__cont">
+                <h3>Contenido</h3>
+                <div class="footer__cont-text">
+                    <a class="footer__cont-a" href="obras.html">Obras</a>
+                    <a class="footer__cont-a" href="artistas.html">Artistas</a>
+                    <a class="footer__cont-a" href="#">Vender en ARTIST</a>
+                </div>
             </div>
 
-        </div>
+            <div class="footer__social">
+                <h3 class="footer__social-text">Redes Sociales</h3>
+                <div class="footer__social-redes">
+                    <a href="#" class="footer__social-logo"><i class="fa-brands fa-square-twitter"></i></a>
+                    <a href="#" class="footer__social-logo"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#" class="footer__social-logo"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="footer__social-logo"><i class="fa-solid fa-square-phone"></i></a>
+                </div>
 
-        <div class="footer__artist">
-            <h3>Acerca de ARTIST</h3>
-            <div class="footer__artist-text">
-                <a class="footer__artist-a" href="info.html">¿Quiénes somos?</a>
-                <a class="footer__artist-a" href="#">Políticas y condiciones</a>
-                <a class="footer__artist-a" href="info.html">Misión</a>
-                <a class="footer__artist-a" href="info.html">Visión</a>
             </div>
-        </div>
-    </section>
 
-    <h3 class="copyright">Todos los derechos reservados 2023 &copy;</h3>
-</footer>
-<script src="js/app.js"></script>
+            <div class="footer__artist">
+                <h3>Acerca de ARTIST</h3>
+                <div class="footer__artist-text">
+                    <a class="footer__artist-a" href="info.html">¿Quiénes somos?</a>
+                    <a class="footer__artist-a" href="info.html">Misión</a>
+                    <a class="footer__artist-a" href="info.html">Visión</a>
+                    <a class="footer__artist-a" href="#">Políticas y condiciones</a>
+                </div>
+            </div>
+        </section>
+
+        <h3 class="copyright">Todos los derechos reservados 2023 &copy;</h3>
+    </footer>
+    <script src="js/app.js"></script>
 </body>
 
 </html>
